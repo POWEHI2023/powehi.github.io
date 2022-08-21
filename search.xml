@@ -4,36 +4,11 @@
   
     
     <entry>
-      <title>(记录贴)平时会用到的数学工具</title>
-      <link href="/powehi.github.io/2022/08/21/tools/"/>
-      <url>/powehi.github.io/2022/08/21/tools/</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-      
-      <categories>
-          
-          <category> 数学 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 数学工具 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>统计学习</title>
+      <title>统计学习概论</title>
       <link href="/powehi.github.io/2022/08/21/statistic/"/>
       <url>/powehi.github.io/2022/08/21/statistic/</url>
       
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA[<h2 id="统计学习的特点">统计学习的特点：</h2><ol type="1"><li>统计学习以计算机及网络为平台，建立在计算机及网络上</li><li>统计学习以数据为研究对象，是数据驱动的学科</li><li>统计学习的目的是对数据进行预测与分析</li><li>统计学习以方法为中心，构建模型并对模型进行预测与分析</li><li>统计学习是概率论、统计学、信息论、计算理论、最优化理论及计算机科学等多个领域的交叉学科</li></ol><span id="more"></span><table><tbody><tr class="odd"><td>赫尔伯特<span class="math inline">\(·\)</span>西蒙 (Herbert A.Simon)曾对学习给出以下定义：“如果一个系统能够通过执行某个过程改进它的性能，这就是学习。”</td></tr></tbody></table><h2 id="统计学习的对象数据">统计学习的对象：数据</h2><p>它从数据出发，提取数据的特征，抽象出数据的模型，发现数据中的知识，回到对数据的分析和预测中去。</p><p>统计学习中对数据的基本假设：同类数据具有一定的统计规律性，这是统计学习的前提。</p><h2id="统计学习的目的用于对数据的预测和分析特别是对未知数据的预测与分析">统计学习的目的：用于对数据的预测和分析，特别是对未知数据的预测与分析。</h2><h3 id="考虑两点">考虑两点</h3><ol type="1"><li>学习什么样的模型</li><li>如何学习模型</li></ol><h2id="统计学习方法从给定的有限的用于学习的训练数据集和出发假设数据是独立同分布产生的并且要学习的模型属于某个函数的集合假设空间">★统计学习方法：从给定的、有限的、用于学习的训练数据集和出发，假设数据是独立同分布产生的；并且要学习的模型属于某个函数的集合(假设空间)</h2><h3 id="一包括三点三要素">一、包括三点，三要素</h3><ol type="1"><li>模型的假设空间（模型model）</li><li>模型选择的准则（策略strategy）</li><li>模型学习的算法（算法algorithm）</li></ol><table><tbody><tr class="odd"><td>如果最优化问题又显式的解析解，这个最优化问题就比较简单。但通常解析解不存在，就需要用数值计算的方法求解。如何保证找到全局最优解，并使求解的过程非常高效，就成为一个重要问题。</td></tr></tbody></table><h3 id="二损失函数与风险函数">二、损失函数与风险函数**</h3><ol type="1"><li><p><span class="math inline">\(0\)</span>-<spanclass="math inline">\(1\)</span>损失函数（<spanclass="math inline">\(0\)</span>-<span class="math inline">\(1\)</span>loss function）</p><p><span class="math display">\[\displaystyle{L(Y,f(X))=\begin{cases}1&amp; Y\neq f(X) \\ 0 &amp;  Y= f(X)\end{cases}}\]</span></p></li><li><p>平方损失函数（quadratic loss function）</p><p><spanclass="math display">\[\displaystyle{L(Y,f(X))=(Y-f(X))^2}\]</span></p></li><li><p>绝对损失函数（absolute loss function）</p><p><spanclass="math display">\[\displaystyle{L(Y,f(X))=|Y-f(X)|}\]</span></p></li><li><p>对数损失函数（logarithmic loss function）</p><p><span class="math display">\[\displaystyle{L(Y,f(X))=-\logP(Y|X)}\]</span></p></li></ol><ul><li><p>损失函数值越小，模型就越好，下面是损失函数的期望值：</p><p><spanclass="math display">\[\displaystyle{R_{exp}(f)=E_P[L(Y,f(X))]=\int_{\Chi* \Upsilon}L(y,f(x))P(x,y)dxdy}\]</span></p></li><li><p>理论上模型<spanclass="math inline">\(f(X)\)</span>关于联合分布<spanclass="math inline">\(P(X,Y)\)</span>的平均意义下的损失，成为<code>风险函数</code>或<code>期望损失</code>，学习目标就是选择期望风险最小的模型</p></li></ul><h3id="三经验风险最小化与结构风险最小化">三、经验风险最小化与结构风险最小化</h3><p>经验风险是模型关于训练样本集的平均损失，根据大数定理，样本容量<spanclass="math inline">\(N\)</span>趋于无穷大时经验风险<spanclass="math inline">\(R_{emp}(f)\)</span>趋于期望风险<spanclass="math inline">\(R_{exp}(f)\)</span>，但现实是训练样本有限，所以经验风险估计期望常常并不理想，要对经验风险进行一定矫正。</p><p><strong>这就关系到监督学习的两个基本策略：经验风险最小化和结构风险最小化。</strong></p><ol type="1"><li><p>经验风险最小化</p><p>当模型是条件概率分布、损失函数是对数损失函数、经验风险最小化就等价于极大似然估计。</p><p><spanclass="math display">\[\displaystyle{R_{emp}(f)=\cfrac{1}{N}\quad\sum_{i=1}^{N}L(y_i,f(x_i))}\]</span></p></li><li><p>结构风险最小化</p><p>结构分概念最小化等价于正则化（regularizer）。</p><p>结构风险在经验风险上加上表示模型复杂度的正则化（regularizer）或罚项（penaltyterm）。</p><p><spanclass="math display">\[\displaystyle{R_{emp}(f)=\cfrac{1}{N}\quad\sum_{i=1}^{N}L(y_i,f(x_i))+ \lambda J(f)}\]</span></p><p>其中<span class="math inline">\(J(f)\)</span>为模型复杂度，模型<spanclass="math inline">\(f\)</span>越复杂，复杂度<spanclass="math inline">\(J(f)\)</span>就越大；<spanclass="math inline">\(\lambda\geqslant0\)</span>是系数，用以权衡经验风险和模型复杂度。</p></li></ol><h2 id="统计学习的研究">统计学习的研究</h2><ol type="1"><li>统计学习方法的研究旨在开发新的<strong>学习方法</strong></li><li>统计学习理论的研究在于探求统计学习方法的<strong>有效性与效率</strong>，以及统计学习的<strong>基本理论问题</strong></li><li>统计学习应用的研究主要考虑将统计学习方法<strong>应用到实际问题中去</strong>，解决实际问题</li></ol><h2 id="模型评估与模型选择">模型评估与模型选择</h2><p>当损失函数给定时，基于损失函数的训练误差和模型的测试误差就成为学习方法的评估标准。</p><blockquote><p>过拟合问题：如果一味提高测试数据的预测能力，就可能导致过拟合问题。具体体现在学习是选择的模型参数过多，对已知的测试数据预测效果很好，但对于未知数据预测结果很差。</p></blockquote><p><img src="../../../../images/IMG_0584.jpg" /></p><hr /><p>如果在假设空间中存在“真”模型，那么所选模型要与真模型参数个数相同，参数向量与真模型的参数向量相近。</p><blockquote><p>对于测试误差，会随着模型复杂度先减小，达到最小之后又增大</p></blockquote><p><img src="../../../../images/PNG图像.png" /></p><hr /><h2 id="正则化验证与交叉验证">正则化验证与交叉验证</h2><p><code>两种用于选择模型的方法</code></p><ul><li><p>其中<strong>正则化验证</strong>是结构风险最小化策略的实现，正则化符合奥卡姆剃须刀原理：在所有可能选择的模型中，能够很好解释已知数据并且十分简单的才是好模型。</p></li><li><p>另一种常用的是<strong>交叉验证</strong>，对于给定的样本，将其随机切分成三部分，分别是训练集（训练模型）、验证集（选择模型）、测试集（评估模型）。基本思想是重复使用数据，可以应对实际问题中数据不足的问题。</p></li></ul><h3 id="一交叉验证的三种类型">一、交叉验证的三种类型</h3><ol type="1"><li><p>简单交叉验证</p><p>例如在<spanclass="math inline">\(MNIST\)</span>分类问题中将样本随机分成两部分、测试集（<spanclass="math inline">\(30\%\)</span>）与训练集（<spanclass="math inline">\(70\%\)</span>）。</p></li><li><p><span class="math inline">\(S\)</span>折交叉验证</p><p>将数据切分成<spanclass="math inline">\(S\)</span>个互不相交、大小相同的子集，利用<spanclass="math inline">\(S-1\)</span>个子集数据进行训练，用余下的数据测试模型；将这一过程进行<spanclass="math inline">\(S\)</span>次重复选择，最后选出评价误差最小的模型。</p></li><li><p>留一交叉验证</p><p>是<span class="math inline">\(S\)</span>折交叉验证的特殊情形（<spanclass="math inline">\(S=N\)</span>），往往在数据缺乏的情况下使用。</p></li></ol><h2 id="泛化误差">泛化误差</h2><blockquote><p>泛化是指模型对未知数据的预测能力，泛化误差反映了学习方法的泛化能力。事实上，泛化误差就是所学到模型的期望风险。<spanclass="math inline">\(\displaystyle{R_{exp}(\hat{f})=E_P[L(Y,\hat{f}(X))]=\int_{\Chi*\Upsilon}L(y,\hat{f}(x))P(x,y)dxdy}\)</span></p></blockquote><p><code>泛化误差上界，假设空间越大，模型越难学习，泛化误差上界越大</code></p><p>对于<span class="math inline">\(f_N\)</span>的泛化能力，<spanclass="math inline">\(R(f_N)=E[L(Y,f_N(X))]\)</span></p><p><img src="../../../../images/PNG图像_2.png" /></p><hr /><ul><li><span class="math inline">\(Hoefffding\)</span>不等式</li></ul><p><img src="../../../../images/PNG图像_3.png" /></p><p><img src="../../../../images/PNG图像_4.png" /></p><hr /><h2 id="生成模型与判别模型">生成模型与判别模型</h2><p><em>监督学习方法又可以分为生成方法（generativeapproach）与判别方法（discriminativeapproach），所学到的模型分别为生成模型（generativemodel）与判别模型（discriminative model）。</em></p><ol type="1"><li>生成方法由数据学习联合概率密度<spanclass="math inline">\(P(X,Y)\)</span>，然后求出条件概率密度<spanclass="math inline">\(P(Y|X)\)</span>，即生成模型<spanclass="math inline">\(\displaystyle{P(Y|X)=\cfrac{P(X,Y)}{P(X)}}\)</span>。</li></ol><blockquote><p><strong>典型生成模型</strong>：朴素贝叶斯法，隐马尔可夫模型</p><p><strong>特点：可以还原出联合概率密度，收敛速度快，当存在隐变量时仍然可以使用</strong></p></blockquote><ol start="2" type="1"><li>判别方法直接学习决策模型<spanclass="math inline">\(f(X)\)</span>或者条件概率密度<spanclass="math inline">\(P(Y|X)\)</span>，作为预测模型。</li></ol><blockquote><p><strong>典型判别模型</strong>：<spanclass="math inline">\(k\)</span>近邻法、感知机、决策树、逻辑斯蒂回归模型、最大熵模型、支持向量机、提升方法、条件随机场等</p><p><strong>特点：准确率更高，方便对数据进行各种程度上的抽象，定义特征并使用特征，简化学习问题</strong></p></blockquote><h2 id="监督学习应用">监督学习应用</h2><ol type="1"><li><p>分类问题</p></li><li><p>标注问题（隐马尔可夫模型，条件随机场）</p></li><li><p>回归问题</p><p>用于预测输入变量和输出变量之间的关系，当输入发生变化时，输出值随之发生变化。回归模型正是输入变量到输出变量之间的映射函数，等价于函数拟合。</p></li></ol><ul><li>根据输入变量个数分为一元回归和多元回归；按照所拟合函数类型分为线性回归和非线性回归。</li><li>最常用的是平方损失函数，可以用最小二乘法求解。</li></ul>]]></content>
       
       
       <categories>
@@ -47,9 +22,9 @@
       
         <tags>
             
-            <tag> 读书记录 </tag>
-            
             <tag> 统计学习 </tag>
+            
+            <tag> 读书记录 </tag>
             
         </tags>
       
@@ -62,7 +37,7 @@
       <link href="/powehi.github.io/2022/08/21/ECONOMICS/"/>
       <url>/powehi.github.io/2022/08/21/ECONOMICS/</url>
       
-        <content type="html"><![CDATA[<h1 id="我们为什么要学习经济学？"><a href="#我们为什么要学习经济学？" class="headerlink" title="我们为什么要学习经济学？"></a>我们为什么要学习经济学？</h1><ol><li>经济学能够帮助我们理解我们所生活的世界。</li><li>经济学能够使我们更精明地参与经济，而在日常生活中，我们需要做许多经济决策。</li><li>经济学能够使我们更好地理解经济政策的潜力与局限性。</li><li>经济学原理可以运用到生活中的方方面面<span id="more"></span><blockquote><p>这一章讲记录经济学的十大原理，并在以后各章中会充分解释这些思想。</p></blockquote></li></ol><h1 id="经济学十大原理"><a href="#经济学十大原理" class="headerlink" title="经济学十大原理"></a>经济学十大原理</h1><ul><li><h2 id="人们如何做出决策"><a href="#人们如何做出决策" class="headerlink" title="人们如何做出决策"></a>人们如何做出决策</h2></li></ul><h3 id="原理一：人们面临权衡取舍"><a href="#原理一：人们面临权衡取舍" class="headerlink" title="原理一：人们面临权衡取舍"></a>原理一：人们面临权衡取舍</h3><h3 id="原理二：某种东西的成本是为了得到它所放弃的东西"><a href="#原理二：某种东西的成本是为了得到它所放弃的东西" class="headerlink" title="原理二：某种东西的成本是为了得到它所放弃的东西"></a>原理二：某种东西的成本是为了得到它所放弃的东西</h3><h3 id="原理三：理性人考虑边际量"><a href="#原理三：理性人考虑边际量" class="headerlink" title="原理三：理性人考虑边际量"></a>原理三：理性人考虑边际量</h3><h3 id="原理四：人们会对激励作出反应"><a href="#原理四：人们会对激励作出反应" class="headerlink" title="原理四：人们会对激励作出反应"></a>原理四：人们会对激励作出反应</h3><ul><li><h2 id="人们如何互相影响"><a href="#人们如何互相影响" class="headerlink" title="人们如何互相影响"></a>人们如何互相影响</h2></li></ul><h3 id="原理五：贸易可以使每个人的状况都变得更好"><a href="#原理五：贸易可以使每个人的状况都变得更好" class="headerlink" title="原理五：贸易可以使每个人的状况都变得更好"></a>原理五：贸易可以使每个人的状况都变得更好</h3><h3 id="原理六：市场通常是组织经济活动的一种好方法"><a href="#原理六：市场通常是组织经济活动的一种好方法" class="headerlink" title="原理六：市场通常是组织经济活动的一种好方法"></a>原理六：市场通常是组织经济活动的一种好方法</h3><h3 id="原理七：政府有时可以改善市场结果"><a href="#原理七：政府有时可以改善市场结果" class="headerlink" title="原理七：政府有时可以改善市场结果"></a>原理七：政府有时可以改善市场结果</h3><ul><li><h2 id="整体经济如何运行"><a href="#整体经济如何运行" class="headerlink" title="整体经济如何运行"></a>整体经济如何运行</h2></li></ul><h3 id="原理八：一国的生活水平取决于它生产物品与服务的能力"><a href="#原理八：一国的生活水平取决于它生产物品与服务的能力" class="headerlink" title="原理八：一国的生活水平取决于它生产物品与服务的能力"></a>原理八：一国的生活水平取决于它生产物品与服务的能力</h3><h3 id="原理九：当政府发行了过多货物时，物价上升"><a href="#原理九：当政府发行了过多货物时，物价上升" class="headerlink" title="原理九：当政府发行了过多货物时，物价上升"></a>原理九：当政府发行了过多货物时，物价上升</h3><h3 id="原理十：社会面领通货膨胀与失业之间的短期权衡"><a href="#原理十：社会面领通货膨胀与失业之间的短期权衡" class="headerlink" title="原理十：社会面领通货膨胀与失业之间的短期权衡"></a>原理十：社会面领通货膨胀与失业之间的短期权衡</h3>]]></content>
+        <content type="html"><![CDATA[<h1 id="我们为什么要学习经济学">我们为什么要学习经济学？</h1><ol type="1"><li>经济学能够帮助我们理解我们所生活的世界。</li><li>经济学能够使我们更精明地参与经济，而在日常生活中，我们需要做许多经济决策。</li><li>经济学能够使我们更好地理解经济政策的潜力与局限性。</li><li>经济学原理可以运用到生活中的方方面面 <span id="more"></span><code>这一章讲记录经济学的十大原理，并在以后各章中会充分解释这些思想。</code># 经济学十大原理</li></ol><ul><li><h2 id="人们如何做出决策">人们如何做出决策</h2><h3 id="原理一人们面临权衡取舍">原理一：人们面临权衡取舍</h3><h3id="原理二某种东西的成本是为了得到它所放弃的东西">原理二：某种东西的成本是为了得到它所放弃的东西</h3><h3 id="原理三理性人考虑边际量">原理三：理性人考虑边际量</h3><h3id="原理四人们会对激励作出反应">原理四：人们会对激励作出反应</h3></li><li><h2 id="人们如何互相影响">人们如何互相影响</h2><h3id="原理五贸易可以使每个人的状况都变得更好">原理五：贸易可以使每个人的状况都变得更好</h3><h3id="原理六市场通常是组织经济活动的一种好方法">原理六：市场通常是组织经济活动的一种好方法</h3><h3id="原理七政府有时可以改善市场结果">原理七：政府有时可以改善市场结果</h3></li><li><h2 id="整体经济如何运行">整体经济如何运行</h2><h3id="原理八一国的生活水平取决于它生产物品与服务的能力">原理八：一国的生活水平取决于它生产物品与服务的能力</h3><h3id="原理九当政府发行了过多货物时物价上升">原理九：当政府发行了过多货物时，物价上升</h3><h3id="原理十社会面领通货膨胀与失业之间的短期权衡">原理十：社会面领通货膨胀与失业之间的短期权衡</h3></li></ul>]]></content>
       
       
       <categories>
@@ -74,34 +49,9 @@
       
         <tags>
             
-            <tag> 经济学 </tag>
-            
             <tag> 读书记录 </tag>
             
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>(娱乐贴)关于冲浪时遇到的段子</title>
-      <link href="/powehi.github.io/2022/08/21/geng/"/>
-      <url>/powehi.github.io/2022/08/21/geng/</url>
-      
-        <content type="html"><![CDATA[<ol><li>老妹啊，叔今年五十八了，离婚带俩娃，生活的冷酷磨没了叔的棱角，但磨不掉叔向往爱与自由的灵魂。叔前半生很苦，在东海杀了四十多年的鱼，本来以为我的心已经跟鱼一样冰冷，但是看到你，叔就知道其实叔还年轻 ，没啥钱也没啥能给你的，手里只有两个硬币，一个点赞还有一个收藏，别嫌弃叔，叔每天都觉得青春在一点点走掉，听着时钟滴答滴答的声音擦眼泪，叔真的好累，幸好有你，不然叔都熬不下去了。<span id="more"></span></li><li>宝啊，叔今年Fifty-eight了，離婚する带Ⅱ瓜娃子，life的냉혹하다磨没了叔的钝角，但磨no掉叔向往love与自由的靈魂。叔前½生很苦，在大润kill了④十多年的fish，本来以为my的heart已经跟🐟一样冷たい，但是look到you，叔就know其实我还young ，没啥💰给you的，也没啥能给的，只有two个コイン，一个dian赞还有1个收藏，别嫌弃叔，叔every day都觉得time is gogogo，听着时钟滴答滴答的声音擦眼泪，叔真的好累，◇好侑尔，怀苒郩骜怀丅祛艻。</li><li>我曾见过耶路撒冷丧钟长鸣，我曾经见过佛罗伦萨明月孤影，我曾见过罗马的满天飞花，我曾见过君士坦天命之人追逐残阳，我曾见过加勒比海的惊涛骇浪，我曾见过里斯本的天崩地裂，我曾见过北美宣言独立，我曾见过巴黎人民高歌奋起，我曾见过伦敦的蒸汽时代，我曾见过神殿内逆转末日，我曾在希腊成为半神，我觉得世界上没有什么景色能让我着迷了，直到我遇见了()…</li><li>很多人看了那个什么EVA终之后就天天说卢浮宫卢浮宫的，根本就不知道在说什么，也不知道你们真的了解卢浮宫吗，你们知道卢浮宫里面有什么作品吗，知道卢浮宫的历史意义是什么吗？知道卢浮宫是1204年建成的吗？知道卢浮宫原来是法国的王宫吗？知道里面曾经住过50位国王王后吗？知道卢浮宫1793年才开始对外开放吗？一天天只知道玩梗，真的有好好的思考过这些吗？知道第一次去卢浮宫应该做哪些准备吗？我第一次去卢浮宫的时候，并没有什么特别的感觉，因为属于我的蒙娜丽莎，我早已遇见，初次遇见你的那天，齿轮开始转动，无法停止那将要失去什么的预感，虽说已经有很多次了，让我们再来一个吻吧Can you give me one last kiss？忘れたくないこと Oh oh oh oh oh~ 忘れたくないこと，<br>Oh oh oh oh oh，I love you more than you’ll ever know</li></ol>]]></content>
-      
-      
-      <categories>
-          
-          <category> 娱乐 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 段子 </tag>
+            <tag> 经济学 </tag>
             
         </tags>
       
@@ -114,7 +64,7 @@
       <link href="/powehi.github.io/2022/08/20/hello-world/"/>
       <url>/powehi.github.io/2022/08/20/hello-world/</url>
       
-        <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><span id="more"></span><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
+        <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your veryfirst post. Check <a href="https://hexo.io/docs/">documentation</a> formore info. If you get any problems when using Hexo, you can find theanswer in <ahref="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> oryou can ask me on <ahref="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><span id="more"></span><h2 id="quick-start">Quick Start</h2><h3 id="create-a-new-post">Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure><p>More info: <ahref="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="run-server">Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="generate-static-files">Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <ahref="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="deploy-to-remote-sites">Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <ahref="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
       
       
       

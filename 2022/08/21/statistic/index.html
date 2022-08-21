@@ -20,19 +20,25 @@
     var CONFIG = {"hostname":"example.com","root":"/powehi.github.io/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="思考不是一种廉价的赎罪券，自由也不是一种无限后退的虚无，而是对未来的，终将发生的命运的忠诚。">
+  <meta name="description" content="统计学习的特点：  统计学习以计算机及网络为平台，建立在计算机及网络上 统计学习以数据为研究对象，是数据驱动的学科 统计学习的目的是对数据进行预测与分析 统计学习以方法为中心，构建模型并对模型进行预测与分析 统计学习是概率论、统计学、信息论、计算理论、最优化理论及计算机科学等多个领域的交叉学科">
 <meta property="og:type" content="article">
-<meta property="og:title" content="统计学习">
+<meta property="og:title" content="统计学习概论">
 <meta property="og:url" content="http://example.com/2022/08/21/statistic/index.html">
 <meta property="og:site_name" content="北落师门">
-<meta property="og:description" content="思考不是一种廉价的赎罪券，自由也不是一种无限后退的虚无，而是对未来的，终将发生的命运的忠诚。">
+<meta property="og:description" content="统计学习的特点：  统计学习以计算机及网络为平台，建立在计算机及网络上 统计学习以数据为研究对象，是数据驱动的学科 统计学习的目的是对数据进行预测与分析 统计学习以方法为中心，构建模型并对模型进行预测与分析 统计学习是概率论、统计学、信息论、计算理论、最优化理论及计算机科学等多个领域的交叉学科">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/images/IMG_0584.jpg">
+<meta property="og:image" content="http://example.com/images/PNG图像.png">
+<meta property="og:image" content="http://example.com/images/PNG图像_2.png">
+<meta property="og:image" content="http://example.com/images/PNG图像_3.png">
+<meta property="og:image" content="http://example.com/images/PNG图像_4.png">
 <meta property="article:published_time" content="2022-08-21T05:14:57.000Z">
-<meta property="article:modified_time" content="2022-08-21T05:20:30.352Z">
+<meta property="article:modified_time" content="2022-08-21T16:33:13.935Z">
 <meta property="article:author" content="北落师门">
-<meta property="article:tag" content="读书记录">
 <meta property="article:tag" content="统计学习">
+<meta property="article:tag" content="读书记录">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/images/IMG_0584.jpg">
 
 <link rel="canonical" href="http://example.com/2022/08/21/statistic/">
 
@@ -47,7 +53,7 @@
   };
 </script>
 
-  <title>统计学习 | 北落师门</title>
+  <title>统计学习概论 | 北落师门</title>
   
 
 
@@ -78,7 +84,9 @@
   </style>
 </noscript>
 
-</head>
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+<!-- hexo injector head_end end --></head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
   <div class="container use-motion">
@@ -184,7 +192,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          统计学习
+          统计学习概论
         </h1>
 
         <div class="post-meta">
@@ -193,10 +201,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2022-08-21 13:14:57 / 修改时间：13:20:30" itemprop="dateCreated datePublished" datetime="2022-08-21T13:14:57+08:00">2022-08-21</time>
+              <time title="创建时间：2022-08-21 13:14:57" itemprop="dateCreated datePublished" datetime="2022-08-21T13:14:57+08:00">2022-08-21</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-08-22 00:33:13" itemprop="dateModified" datetime="2022-08-22T00:33:13+08:00">2022-08-22</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -236,7 +250,197 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        
+        <h2 id="统计学习的特点">统计学习的特点：</h2>
+<ol type="1">
+<li>统计学习以计算机及网络为平台，建立在计算机及网络上</li>
+<li>统计学习以数据为研究对象，是数据驱动的学科</li>
+<li>统计学习的目的是对数据进行预测与分析</li>
+<li>统计学习以方法为中心，构建模型并对模型进行预测与分析</li>
+<li>统计学习是概率论、统计学、信息论、计算理论、最优化理论及计算机科学等多个领域的交叉学科</li>
+</ol>
+<span id="more"></span>
+<table>
+<tbody>
+<tr class="odd">
+<td>赫尔伯特<span class="math inline">\(·\)</span>西蒙 (Herbert A.Simon)
+曾对学习给出以下定义：“如果一个系统能够通过执行某个过程改进它的性能，这就是学习。”</td>
+</tr>
+</tbody>
+</table>
+<h2 id="统计学习的对象数据">统计学习的对象：数据</h2>
+<p>它从数据出发，提取数据的特征，抽象出数据的模型，发现数据中的知识，
+回到对数据的分析和预测中去。</p>
+<p>统计学习中对数据的基本假设：同类数据具有一定的统计规律性，这是统计学习的前提。</p>
+<h2
+id="统计学习的目的用于对数据的预测和分析特别是对未知数据的预测与分析">统计学习的目的：用于对数据的预测和分析，特别是对未知数据的预测与分析。</h2>
+<h3 id="考虑两点">考虑两点</h3>
+<ol type="1">
+<li>学习什么样的模型</li>
+<li>如何学习模型</li>
+</ol>
+<h2
+id="统计学习方法从给定的有限的用于学习的训练数据集和出发假设数据是独立同分布产生的并且要学习的模型属于某个函数的集合假设空间">★
+统计学习方法：从给定的、有限的、用于学习的训练数据集和出发，假设数据是独立同分布产生的；并且要学习的模型属于某个函数的集合(假设空间)</h2>
+<h3 id="一包括三点三要素">一、包括三点，三要素</h3>
+<ol type="1">
+<li>模型的假设空间（模型model）</li>
+<li>模型选择的准则（策略strategy）</li>
+<li>模型学习的算法（算法algorithm）</li>
+</ol>
+<table>
+<tbody>
+<tr class="odd">
+<td>如果最优化问题又显式的解析解，这个最优化问题就比较简单。但通常解析解不存在，就需要用数值计算的方法求解。如何保证找到全局最优解，并使求解的过程非常高效，就成为一个重要问题。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="二损失函数与风险函数">二、损失函数与风险函数**</h3>
+<ol type="1">
+<li><p><span class="math inline">\(0\)</span>-<span
+class="math inline">\(1\)</span>损失函数（<span
+class="math inline">\(0\)</span>-<span class="math inline">\(1\)</span>
+loss function）</p>
+<p><span class="math display">\[\displaystyle{L(Y,f(X))=\begin{cases}1
+&amp; Y\neq f(X) \\ 0 &amp;  Y= f(X)\end{cases}}\]</span></p></li>
+<li><p>平方损失函数（quadratic loss function）</p>
+<p><span
+class="math display">\[\displaystyle{L(Y,f(X))=(Y-f(X))^2}\]</span></p></li>
+<li><p>绝对损失函数（absolute loss function）</p>
+<p><span
+class="math display">\[\displaystyle{L(Y,f(X))=|Y-f(X)|}\]</span></p></li>
+<li><p>对数损失函数（logarithmic loss function）</p>
+<p><span class="math display">\[\displaystyle{L(Y,f(X))=-\log
+P(Y|X)}\]</span></p></li>
+</ol>
+<ul>
+<li><p>损失函数值越小，模型就越好，下面是损失函数的期望值：</p>
+<p><span
+class="math display">\[\displaystyle{R_{exp}(f)=E_P[L(Y,f(X))]=\int_{\Chi
+* \Upsilon}L(y,f(x))P(x,y)dxdy}\]</span></p></li>
+<li><p>理论上模型<span
+class="math inline">\(f(X)\)</span>关于联合分布<span
+class="math inline">\(P(X,Y)\)</span>的平均意义下的损失，成为<code>风险函数</code>或<code>期望损失</code>，学习目标就是选择期望风险最小的模型</p></li>
+</ul>
+<h3
+id="三经验风险最小化与结构风险最小化">三、经验风险最小化与结构风险最小化</h3>
+<p>经验风险是模型关于训练样本集的平均损失，根据大数定理，样本容量<span
+class="math inline">\(N\)</span>趋于无穷大时经验风险<span
+class="math inline">\(R_{emp}(f)\)</span>趋于期望风险<span
+class="math inline">\(R_{exp}(f)\)</span>，但现实是训练样本有限，所以经验风险估计期望常常并不理想，要对经验风险进行一定矫正。</p>
+<p><strong>这就关系到监督学习的两个基本策略：经验风险最小化和结构风险最小化。</strong></p>
+<ol type="1">
+<li><p>经验风险最小化</p>
+<p>当模型是条件概率分布、损失函数是对数损失函数、经验风险最小化就等价于极大似然估计。</p>
+<p><span
+class="math display">\[\displaystyle{R_{emp}(f)=\cfrac{1}{N}\quad\sum_{i=1}^{N}L(y_i,f(x_i))}\]</span></p></li>
+<li><p>结构风险最小化</p>
+<p>结构分概念最小化等价于正则化（regularizer）。</p>
+<p>结构风险在经验风险上加上表示模型复杂度的正则化（regularizer）或罚项（penalty
+term）。</p>
+<p><span
+class="math display">\[\displaystyle{R_{emp}(f)=\cfrac{1}{N}\quad\sum_{i=1}^{N}L(y_i,f(x_i))
++ \lambda J(f)}\]</span></p>
+<p>其中<span class="math inline">\(J(f)\)</span>为模型复杂度，模型<span
+class="math inline">\(f\)</span>越复杂，复杂度<span
+class="math inline">\(J(f)\)</span>就越大；<span
+class="math inline">\(\lambda
+\geqslant0\)</span>是系数，用以权衡经验风险和模型复杂度。</p></li>
+</ol>
+<h2 id="统计学习的研究">统计学习的研究</h2>
+<ol type="1">
+<li>统计学习方法的研究旨在开发新的<strong>学习方法</strong></li>
+<li>统计学习理论的研究在于探求统计学习方法的<strong>有效性与效率</strong>，以及统计学习的<strong>基本理论问题</strong></li>
+<li>统计学习应用的研究主要考虑将统计学习方法<strong>应用到实际问题中去</strong>，解决实际问题</li>
+</ol>
+<h2 id="模型评估与模型选择">模型评估与模型选择</h2>
+<p>当损失函数给定时，基于损失函数的训练误差和模型的测试误差就成为学习方法的评估标准。</p>
+<blockquote>
+<p>过拟合问题：如果一味提高测试数据的预测能力，就可能导致过拟合问题。具体体现在学习是选择的模型参数过多，对已知的测试数据预测效果很好，但对于未知数据预测结果很差。</p>
+</blockquote>
+<p><img src="../../../../images/IMG_0584.jpg" /></p>
+<hr />
+<p>如果在假设空间中存在“真”模型，那么所选模型要与真模型参数个数相同，参数向量与真模型的参数向量相近。</p>
+<blockquote>
+<p>对于测试误差，会随着模型复杂度先减小，达到最小之后又增大</p>
+</blockquote>
+<p><img src="../../../../images/PNG图像.png" /></p>
+<hr />
+<h2 id="正则化验证与交叉验证">正则化验证与交叉验证</h2>
+<p><code>两种用于选择模型的方法</code></p>
+<ul>
+<li><p>其中<strong>正则化验证</strong>是结构风险最小化策略的实现，正则化符合奥卡姆剃须刀原理：在所有可能选择的模型中，能够很好解释已知数据并且十分简单的才是好模型。</p></li>
+<li><p>另一种常用的是<strong>交叉验证</strong>，对于给定的样本，将其随机切分成三部分，分别是训练集（训练模型）、验证集（选择模型）、测试集（评估模型）。基本思想是重复使用数据，可以应对实际问题中数据不足的问题。</p></li>
+</ul>
+<h3 id="一交叉验证的三种类型">一、交叉验证的三种类型</h3>
+<ol type="1">
+<li><p>简单交叉验证</p>
+<p>例如在<span
+class="math inline">\(MNIST\)</span>分类问题中将样本随机分成两部分、测试集（<span
+class="math inline">\(30\%\)</span>）与训练集（<span
+class="math inline">\(70\%\)</span>）。</p></li>
+<li><p><span class="math inline">\(S\)</span>折交叉验证</p>
+<p>将数据切分成<span
+class="math inline">\(S\)</span>个互不相交、大小相同的子集，利用<span
+class="math inline">\(S-1\)</span>个子集数据进行训练，用余下的数据测试模型；将这一过程进行<span
+class="math inline">\(S\)</span>次重复选择，最后选出评价误差最小的模型。</p></li>
+<li><p>留一交叉验证</p>
+<p>是<span class="math inline">\(S\)</span>折交叉验证的特殊情形（<span
+class="math inline">\(S=N\)</span>），往往在数据缺乏的情况下使用。</p></li>
+</ol>
+<h2 id="泛化误差">泛化误差</h2>
+<blockquote>
+<p>泛化是指模型对未知数据的预测能力，泛化误差反映了学习方法的泛化能力。事实上，泛化误差就是所学到模型的期望风险。<span
+class="math inline">\(\displaystyle{R_{exp}(\hat{f})=E_P[L(Y,\hat{f}(X))]=\int_{\Chi*\Upsilon}L(y,\hat{f}(x))P(x,y)dxdy}\)</span></p>
+</blockquote>
+<p><code>泛化误差上界，假设空间越大，模型越难学习，泛化误差上界越大</code></p>
+<p>对于<span class="math inline">\(f_N\)</span>的泛化能力，<span
+class="math inline">\(R(f_N)=E[L(Y,f_N(X))]\)</span></p>
+<p><img src="../../../../images/PNG图像_2.png" /></p>
+<hr />
+<ul>
+<li><span class="math inline">\(Hoefffding\)</span>不等式</li>
+</ul>
+<p><img src="../../../../images/PNG图像_3.png" /></p>
+<p><img src="../../../../images/PNG图像_4.png" /></p>
+<hr />
+<h2 id="生成模型与判别模型">生成模型与判别模型</h2>
+<p><em>监督学习方法又可以分为生成方法（generative
+approach）与判别方法（discriminative
+approach），所学到的模型分别为生成模型（generative
+model）与判别模型（discriminative model）。</em></p>
+<ol type="1">
+<li>生成方法由数据学习联合概率密度<span
+class="math inline">\(P(X,Y)\)</span>，然后求出条件概率密度<span
+class="math inline">\(P(Y|X)\)</span>，即生成模型<span
+class="math inline">\(\displaystyle{P(Y|X)=\cfrac{P(X,Y)}{P(X)}}\)</span>。</li>
+</ol>
+<blockquote>
+<p><strong>典型生成模型</strong>：朴素贝叶斯法，隐马尔可夫模型</p>
+<p><strong>特点：可以还原出联合概率密度，收敛速度快，当存在隐变量时仍然可以使用</strong></p>
+</blockquote>
+<ol start="2" type="1">
+<li>判别方法直接学习决策模型<span
+class="math inline">\(f(X)\)</span>或者条件概率密度<span
+class="math inline">\(P(Y|X)\)</span>，作为预测模型。</li>
+</ol>
+<blockquote>
+<p><strong>典型判别模型</strong>：<span
+class="math inline">\(k\)</span>近邻法、感知机、决策树、逻辑斯蒂回归模型、最大熵模型、支持向量机、提升方法、条件随机场等</p>
+<p><strong>特点：准确率更高，方便对数据进行各种程度上的抽象，定义特征并使用特征，简化学习问题</strong></p>
+</blockquote>
+<h2 id="监督学习应用">监督学习应用</h2>
+<ol type="1">
+<li><p>分类问题</p></li>
+<li><p>标注问题（隐马尔可夫模型，条件随机场）</p></li>
+<li><p>回归问题</p>
+<p>用于预测输入变量和输出变量之间的关系，当输入发生变化时，输出值随之发生变化。
+回归模型正是输入变量到输出变量之间的映射函数，等价于函数拟合。</p></li>
+</ol>
+<ul>
+<li>根据输入变量个数分为一元回归和多元回归；按照所拟合函数类型分为线性回归和非线性回归。</li>
+<li>最常用的是平方损失函数，可以用最小二乘法求解。</li>
+</ul>
+
     </div>
 
     
@@ -245,8 +449,8 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/powehi.github.io/tags/%E8%AF%BB%E4%B9%A6%E8%AE%B0%E5%BD%95/" rel="tag"># 读书记录</a>
               <a href="/powehi.github.io/tags/%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0/" rel="tag"># 统计学习</a>
+              <a href="/powehi.github.io/tags/%E8%AF%BB%E4%B9%A6%E8%AE%B0%E5%BD%95/" rel="tag"># 读书记录</a>
           </div>
 
         
@@ -258,10 +462,7 @@
     <a href="/powehi.github.io/2022/08/21/ECONOMICS/" rel="prev" title="ECONOMICS">
       <i class="fa fa-chevron-left"></i> ECONOMICS
     </a></div>
-      <div class="post-nav-item">
-    <a href="/powehi.github.io/2022/08/21/tools/" rel="next" title="(记录贴)平时会用到的数学工具">
-      (记录贴)平时会用到的数学工具 <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -321,6 +522,8 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0%E7%9A%84%E7%89%B9%E7%82%B9"><span class="nav-number">1.</span> <span class="nav-text">统计学习的特点：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0%E7%9A%84%E5%AF%B9%E8%B1%A1%E6%95%B0%E6%8D%AE"><span class="nav-number">2.</span> <span class="nav-text">统计学习的对象：数据</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0%E7%9A%84%E7%9B%AE%E7%9A%84%E7%94%A8%E4%BA%8E%E5%AF%B9%E6%95%B0%E6%8D%AE%E7%9A%84%E9%A2%84%E6%B5%8B%E5%92%8C%E5%88%86%E6%9E%90%E7%89%B9%E5%88%AB%E6%98%AF%E5%AF%B9%E6%9C%AA%E7%9F%A5%E6%95%B0%E6%8D%AE%E7%9A%84%E9%A2%84%E6%B5%8B%E4%B8%8E%E5%88%86%E6%9E%90"><span class="nav-number">3.</span> <span class="nav-text">统计学习的目的：用于对数据的预测和分析，特别是对未知数据的预测与分析。</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%80%83%E8%99%91%E4%B8%A4%E7%82%B9"><span class="nav-number">3.1.</span> <span class="nav-text">考虑两点</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95%E4%BB%8E%E7%BB%99%E5%AE%9A%E7%9A%84%E6%9C%89%E9%99%90%E7%9A%84%E7%94%A8%E4%BA%8E%E5%AD%A6%E4%B9%A0%E7%9A%84%E8%AE%AD%E7%BB%83%E6%95%B0%E6%8D%AE%E9%9B%86%E5%92%8C%E5%87%BA%E5%8F%91%E5%81%87%E8%AE%BE%E6%95%B0%E6%8D%AE%E6%98%AF%E7%8B%AC%E7%AB%8B%E5%90%8C%E5%88%86%E5%B8%83%E4%BA%A7%E7%94%9F%E7%9A%84%E5%B9%B6%E4%B8%94%E8%A6%81%E5%AD%A6%E4%B9%A0%E7%9A%84%E6%A8%A1%E5%9E%8B%E5%B1%9E%E4%BA%8E%E6%9F%90%E4%B8%AA%E5%87%BD%E6%95%B0%E7%9A%84%E9%9B%86%E5%90%88%E5%81%87%E8%AE%BE%E7%A9%BA%E9%97%B4"><span class="nav-number">4.</span> <span class="nav-text">★
+统计学习方法：从给定的、有限的、用于学习的训练数据集和出发，假设数据是独立同分布产生的；并且要学习的模型属于某个函数的集合(假设空间)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%80%E5%8C%85%E6%8B%AC%E4%B8%89%E7%82%B9%E4%B8%89%E8%A6%81%E7%B4%A0"><span class="nav-number">4.1.</span> <span class="nav-text">一、包括三点，三要素</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8C%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0%E4%B8%8E%E9%A3%8E%E9%99%A9%E5%87%BD%E6%95%B0"><span class="nav-number">4.2.</span> <span class="nav-text">二、损失函数与风险函数**</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%89%E7%BB%8F%E9%AA%8C%E9%A3%8E%E9%99%A9%E6%9C%80%E5%B0%8F%E5%8C%96%E4%B8%8E%E7%BB%93%E6%9E%84%E9%A3%8E%E9%99%A9%E6%9C%80%E5%B0%8F%E5%8C%96"><span class="nav-number">4.3.</span> <span class="nav-text">三、经验风险最小化与结构风险最小化</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0%E7%9A%84%E7%A0%94%E7%A9%B6"><span class="nav-number">5.</span> <span class="nav-text">统计学习的研究</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0%E4%B8%8E%E6%A8%A1%E5%9E%8B%E9%80%89%E6%8B%A9"><span class="nav-number">6.</span> <span class="nav-text">模型评估与模型选择</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%AD%A3%E5%88%99%E5%8C%96%E9%AA%8C%E8%AF%81%E4%B8%8E%E4%BA%A4%E5%8F%89%E9%AA%8C%E8%AF%81"><span class="nav-number">7.</span> <span class="nav-text">正则化验证与交叉验证</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%80%E4%BA%A4%E5%8F%89%E9%AA%8C%E8%AF%81%E7%9A%84%E4%B8%89%E7%A7%8D%E7%B1%BB%E5%9E%8B"><span class="nav-number">7.1.</span> <span class="nav-text">一、交叉验证的三种类型</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B3%9B%E5%8C%96%E8%AF%AF%E5%B7%AE"><span class="nav-number">8.</span> <span class="nav-text">泛化误差</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%94%9F%E6%88%90%E6%A8%A1%E5%9E%8B%E4%B8%8E%E5%88%A4%E5%88%AB%E6%A8%A1%E5%9E%8B"><span class="nav-number">9.</span> <span class="nav-text">生成模型与判别模型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%9B%91%E7%9D%A3%E5%AD%A6%E4%B9%A0%E5%BA%94%E7%94%A8"><span class="nav-number">10.</span> <span class="nav-text">监督学习应用</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -334,20 +537,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/powehi.github.io/archives/">
         
-          <span class="site-state-item-count">5</span>
+          <span class="site-state-item-count">3</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/powehi.github.io/categories/">
           
-        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-count">3</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/powehi.github.io/tags/">
           
-        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-count">3</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -440,6 +643,61 @@
 
 
   
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
 
   
 
