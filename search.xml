@@ -4,6 +4,60 @@
   
     
     <entry>
+      <title>贸易如何使我们生活变得更好</title>
+      <link href="/powehi.github.io/2022/08/23/economics2/"/>
+      <url>/powehi.github.io/2022/08/23/economics2/</url>
+      
+        <content type="html"><![CDATA[<h2 id="引言先说一个例子">引言，先说一个例子</h2><p>在一个地区，生活这两个人，分别叫做<spanclass="math inline">\(Frank\)</span>和<spanclass="math inline">\(Ruby\)</span>，这两个人都会生产牛肉和土豆，他们的生产情况如下表所示：</p><table><thead><tr class="header"><th style="text-align: center;"></th><th style="text-align: center;">生产1盎司所需要的时间(分钟)</th><th style="text-align: center;">8个小时的产量(盎司)</th></tr></thead><tbody><tr class="odd"><td style="text-align: center;">Name</td><td style="text-align: center;">牛肉 ｜ 土豆</td><td style="text-align: center;">牛肉 ｜ 土豆</td></tr><tr class="even"><td style="text-align: center;">Frank</td><td style="text-align: center;">60 ｜ 15</td><td style="text-align: center;">08 ｜ 32</td></tr><tr class="odd"><td style="text-align: center;">Ruby</td><td style="text-align: center;">20 ｜ 10</td><td style="text-align: center;">24 ｜ 48</td></tr></tbody></table><span id="more"></span><blockquote><p>他们每个人都面临权衡取舍，当增加牛肉产量时，就会占用本用来生产土豆的时间，使土豆的产量减少，当增加土豆产量时也同样会减少牛肉的产量。</p></blockquote><blockquote><p>些减少的产量被称为<code>机会成本</code>，在经济学十大原理中提到，我们时刻面临着权衡取舍，并且某件东西的成本是为了得到它所放弃的东西。</p></blockquote><p>某一天，<span class="math inline">\(Ruby\)</span>告诉<spanclass="math inline">\(Frank\)</span>，说<spanclass="math inline">\(Frank\)</span>应该完全停止生产牛肉，而把所有时间投入到土豆生产，这样他每天<spanclass="math inline">\(8\)</span>小时可以生产<spanclass="math inline">\(32\)</span>盎司土豆，如果他把<spanclass="math inline">\(32\)</span>盎司重的<spanclass="math inline">\(15\)</span>盎司给<spanclass="math inline">\(Ruby\)</span>，将会得到<spanclass="math inline">\(5\)</span>盎司牛肉的回报，最终<spanclass="math inline">\(Frank\)</span>会得到<spanclass="math inline">\(17\)</span>盎司土豆和<spanclass="math inline">\(5\)</span>盎司牛肉，而不是现在的<spanclass="math inline">\(16\)</span>盎司土豆和<spanclass="math inline">\(4\)</span>盎司牛肉。</p><p>同样，<span class="math inline">\(Ruby\)</span>可以每天用<spanclass="math inline">\(6\)</span>小时生产牛肉，<spanclass="math inline">\(2\)</span>小时生产土豆，那么他将得到<spanclass="math inline">\(18\)</span>盎司牛肉和<spanclass="math inline">\(12\)</span>盎司土豆，用<spanclass="math inline">\(5\)</span>盎司交换来<spanclass="math inline">\(15\)</span>盎司土豆，那最终可以得到<spanclass="math inline">\(13\)</span>盎司牛肉和<spanclass="math inline">\(27\)</span>盎司土豆。</p><p>他们都得到了比过去更多的食物。</p><h2 id="专业化的动力">专业化的动力</h2><h3 id="绝对优势">绝对优势</h3><p><em>一个生产者用比另一个生产者更少的投入生产某种物品的能力。</em></p><p>上例中，由于<spanclass="math inline">\(Ruby\)</span>生产每一种食物所需要的时间(成本)都低于<spanclass="math inline">\(Frank\)</span>，所以说<spanclass="math inline">\(Ruby\)</span>相对<spanclass="math inline">\(Frank\)</span>拥有绝对优势。</p><h3 id="比较优势">比较优势</h3><p><em>一个生产者以低于另一个生产者的机会成本生产某种物品的能力</em></p><p>上例中，当<span class="math inline">\(Ruby\)</span>把<spanclass="math inline">\(10\)</span>分钟用于生产<spanclass="math inline">\(1\)</span>盎司土豆时，将不再可以用<spanclass="math inline">\(10\)</span>分钟生产<spanclass="math inline">\(1/2\)</span>盎司的牛肉，这样<spanclass="math inline">\(1\)</span>盎司土豆的机会成本是<spanclass="math inline">\(1/2\)</span>盎司牛肉。</p><p>同样的计算方法得到对<spanclass="math inline">\(Frank\)</span>来说，<spanclass="math inline">\(1\)</span>盎司土豆的机会成本是<spanclass="math inline">\(1/4\)</span>盎司牛肉。</p><table><thead><tr class="header"><th style="text-align: center;"></th><th style="text-align: center;"><spanclass="math inline">\(1\)</span>盎司牛肉的机会成本</th><th style="text-align: center;"><spanclass="math inline">\(1\)</span>盎司土豆的机会成本</th></tr></thead><tbody><tr class="odd"><td style="text-align: center;">Frank</td><td style="text-align: center;">4盎司土豆</td><td style="text-align: center;">1/4盎司牛肉</td></tr><tr class="even"><td style="text-align: center;">Ruby</td><td style="text-align: center;">2盎司土豆</td><td style="text-align: center;">1/2盎司牛肉</td></tr></tbody></table><p>当一个生产者在生产<spanclass="math inline">\(X\)</span>物品时放弃了较少的其他物品，即生产<spanclass="math inline">\(X\)</span>的机会成本较小，我们就可以说他在该物品的生产上具有比较优势</p><h3 id="比较优势与贸易">比较优势与贸易</h3><p>在以上例子中，<spanclass="math inline">\(Frank\)</span>用更多时间生产土豆，<spanclass="math inline">\(Ruby\)</span>用更多时间生产牛肉，结果土豆的总产量从<spanclass="math inline">\(40\)</span>盎司增加到<spanclass="math inline">\(44\)</span>盎司，牛肉的总产量从<spanclass="math inline">\(16\)</span>盎司增加到<spanclass="math inline">\(18\)</span>盎司，<spanclass="math inline">\(Frank\)</span>和<spanclass="math inline">\(Ruby\)</span>分享这种产量增加的好处。</p><p>对<span class="math inline">\(Frank\)</span>来说，他用<spanclass="math inline">\(15\)</span>盎司土豆换取了<spanclass="math inline">\(5\)</span>盎司牛肉，每<spanclass="math inline">\(1\)</span>盎司牛肉的价格为<spanclass="math inline">\(3\)</span>盎司土豆，而如果他自己生产牛肉，每生产<spanclass="math inline">\(1\)</span>盎司牛肉就意味着放弃可以生产<spanclass="math inline">\(4\)</span>盎司土豆的时间，既每<spanclass="math inline">\(1\)</span>盎司牛肉的价格为<spanclass="math inline">\(4\)</span>盎司土豆。因此<spanclass="math inline">\(Frank\)</span>在交易中以对自己有利的价格买到了牛肉。</p><p>对<span class="math inline">\(Ruby\)</span>来说，他用<spanclass="math inline">\(5\)</span>盎司牛肉换取了<spanclass="math inline">\(15\)</span>盎司土豆，意味着<spanclass="math inline">\(1\)</span>盎司土豆的价格为<spanclass="math inline">\(1/3\)</span>盎司牛肉，而如果他自己生产土豆，每生产<spanclass="math inline">\(1\)</span>盎司土豆就意味着放弃可以生产<spanclass="math inline">\(1/2\)</span>盎司的牛肉，既每<spanclass="math inline">\(1\)</span>盎司土豆的价格为<spanclass="math inline">\(1/2\)</span>盎司牛肉。因此<spanclass="math inline">\(Ruby\)</span>也在交易中以对自己有利的价格买到了土豆。</p><p><strong>一般对在贸易中获益的双方而言，他们进行贸易的价格在两种机会成本之间。</strong></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 经济学 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 经济学 </tag>
+            
+            <tag> 读书记录 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>像经济学家一样思考</title>
+      <link href="/powehi.github.io/2022/08/23/economics1/"/>
+      <url>/powehi.github.io/2022/08/23/economics1/</url>
+      
+        <content type="html"><![CDATA[<h2 id="像经济学家一样思考">像经济学家一样思考</h2><p>就像计算机领域的算法工程和软件工程，算法工程师经常会考虑实现一种个方面更优秀的算法，或是在时间上或是在空间上；而软件工程师会利用现实中已经存在的算法，做一些实际上的运用，例如制作一款供人们日常使用的软件。</p><p>经济学家们也分为作为科学家的经济学家，和作为政策顾问的经济学家。为了说明白这两种经济学家的区别，我们需要引入两个专业词汇，<code>实证分析</code>和<code>规范分析</code>。</p><p><strong>实证表述</strong>：实证表述是描述性的，它描述世界中客观运行的事情，这件事情不受个人情感而改变。</p><p><strong>规范表述</strong>：规范表述是规定性的，它试图描述世界应该如何运行，一般不同的经济学家由于价值取向和对事物的科学判断不同，会产生不同的规范表述。</p><span id="more"></span><hr /><p><strong>举个例子：</strong></p><p>Portia说：最低工资法引起了失业。</p><p>Noah说：政府应该提高最低工资。</p><p>其中Portia的表述就是实证表述，描述了这个世界是什么样子，而Noah的表述是规范表述，描述了这个世界<em>应该</em>是什么样子。</p><hr /><h3 id="作为科学家的经济学家">作为科学家的经济学家</h3><p>作为科学家的经济学家努力以科学家的客观性来探讨他们的主题。而它们研究经济学的方法与我们研究物理、生物的方法很大程度上是相通的：提出理论，收集数据，分析数据，证明理论。</p><p><strong>一个科学的本质，是冷静的建立与分析关于世界如何运行理论的科学方法。</strong></p><h4 id="科学方法">科学方法</h4><p>当我们提出一项理论之前，我们需要先假设，再通过现实或实验中的数据来进行验证这项理论。在物理学研究中，当伽利略提出动能守恒定律前，他会在实验室中一遍遍重复在斜坡上滚下小球；当牛顿提出万有引力定律前，他也会在实验室中一遍遍两个物体之间的相互作用。但是当一个经济学家想要提出一项理论前，他无法在实验室中模拟验证这项理论，<strong>经济学是一个现实中的科学</strong>，它只可以使用世界向它已经提供的数据来进行研究，因此经济学家们十分关注历史所以提供的自然实验。</p><p>历史上的事件之所以具有研究价值，是因为它不仅使我们了解过去的经济，还能给予我们一种评价当前经济理论的视角。</p><h4 id="假设的作用">假设的作用</h4><p>在研究经济学时，由于现实世界纷繁复杂，我们很难以透过如此复杂的现象看到经济规律的本质，所以就如同在物理题中经常看到的字眼--“假设”，在中学时我们为了更容易理解物体的运动，我们常常假设某平面的摩擦力为<spanclass="math inline">\(0\)</span>；当从高空抛下一个物体时，我们也常假设此时的空气阻力为<spanclass="math inline">\(0\)</span>。在经济学中我们也常常这样做，比如假设只存在两件商品以及两个国家，这种假设可以使我们的研究变得容易，并且在这种研究的基础上，可以更容易去理解复杂的现实世界。</p><hr /><p>当我们想研究政府改变流通中的货币量会对长期短期经济产生怎样的影响，我们常假设价格完全固定；当我们想了解对长期经济的影响时，又回假设所有价格都是完全可变的。</p><hr /><h4 id="经济模型">经济模型</h4><p>数学建模时，我们常常将现实中某些属性数字化，用这些抽象的数据建立模型，以便于忽略一些不重要的影响因素，研究这些属性之间的相互影响；教授解剖学时，我们也常使用一些人体模型，这些模型包括人体的主要器官--心脏、肝脏、肾脏等，从而在学习解剖时不需要关注复杂的肌肉和毛细血管。</p><p>经济学家的模型通常由图形和数字组成，这些模型使我们关注真正重要的东西。</p><ul><li>循环流量图：一个说明货币如何通过市场在家庭与企业之间流动的直观经济模型。</li><li><spanclass="math inline">\(*\)</span>生产可能性边界：表示在可能得到的生产要素与生产技术既定时。一个经济所能生产的产品数量的各种组合的图形。</li><li>关键词：有效率的、无效率的、机会成本</li></ul><h3 id="作为政策顾问的经济学家">作为政策顾问的经济学家</h3><blockquote><p>经济学家和政治哲学家的思想、无论正确与否，实际上都要比一般所想象的更有力量。事实上，这个世界就是由它们统治的。那些自认为能够免受经济学家思想影响的实干家往往也只是某些已故经济学家的俘虏。那些当权狂人信奉的其实也不过是若干年前某些末流学者的狂妄思想。</p><p>-- John Maynard Keynes</p></blockquote><p>但在现实世界中，经济学家的意见由于难以考虑到国家运转的各个方面，所以经济学家的意见并不总是被采纳。</p><p>由于不同经济学家对当前真的的认知存在分歧，比如在消费税和所得税方面，有人认为应该采用消费税，而有些人认为应该采用所得税，并且不同经济学家的价值观不同，比如有人认为穷人和富人应该按收入比例摊付公共支出，也有些人认为穷人和富人应该平分摊付公共支出，导致经济学及之间也经常存在分歧。</p><p>但这种分歧不应该被夸大，在很多时候经济学家对某些事情的主张会达到很高的共识度，比如在是否应该限制租金上限这件事上，大部分经济学家都认为不应该限制租金上限，但市政府还是会不理会经济学家的剪辑，而对房客收取租金规定上限。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 经济学 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 经济学 </tag>
+            
+            <tag> 读书记录 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Leetcode全排列与括号生成</title>
       <link href="/powehi.github.io/2022/08/22/leetcode-220822/"/>
       <url>/powehi.github.io/2022/08/22/leetcode-220822/</url>
