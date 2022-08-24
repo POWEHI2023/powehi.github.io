@@ -4,7 +4,32 @@
   
     
     <entry>
-      <title>如何学习一门小语种之日语</title>
+      <title>一款好看的字体Zed Mono</title>
+      <link href="/powehi.github.io/2022/08/24/setzedfont/"/>
+      <url>/powehi.github.io/2022/08/24/setzedfont/</url>
+      
+        <content type="html"><![CDATA[<h2 id="前言">前言</h2><p>听说最近Atom团队在Alpha测试一款新的编辑器<ahref="https://zed.dev">Zed</a>，使用Rust编写，由GPU来渲染用户界面，支持多人实时协同，目前已经支持包括C/C++、Python、GO、JavaScripy、Markdown、Rust等11种语言，而他们的字体Zed-Mono在我看来具有一种更加舒适的设计，在他人分享的图片上看起来感觉比vscode的原生字体更加生动，因此我在这里分享一下我安装这款字体的经历。</p><p>这款字体目前可以在GitHub上找到，项目地址为https://github.com/zed-industries/zed-fonts.git。</p><span id="more"></span><h2 id="安装">安装</h2><p>我们可以先通过<code>git</code>将项目<code>clone</code>到本地：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">mkdir</span> zedf &amp;&amp; <span class="built_in">cd</span> zedf   <span class="comment">#寻找一个存放项目文件的地方</span></span><br><span class="line">git <span class="built_in">clone</span> https://github.com/zed-industries/zed-fonts.git</span><br><span class="line"><span class="built_in">cd</span> zed-fonts</span><br></pre></td></tr></table></figure></p><p>根据<code>README.md</code>文件中的描述，需要我们运行<code>npm install</code>来安装节点模块，所以需要可以运行<code>npm</code>：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#在MacOS系统中，可以使用Homebrew包管理工具来安装npm</span></span><br><span class="line">brew search node    <span class="comment">#npm在Node v0.6.x版本后已经内建于Node系统</span></span><br><span class="line"><span class="comment">#在Ubuntu系统中，可以使用apt包管理工具来安装npm</span></span><br><span class="line">apt install nodejs npm</span><br><span class="line"></span><br><span class="line"><span class="comment">#安装完成后，可以通过下面指令查看是否安装成功</span></span><br><span class="line">npm -v</span><br></pre></td></tr></table></figure> 运行结果： <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">14:32@ ~ % npm -v</span><br><span class="line">8.15.0</span><br><span class="line">14:32@ ~ % </span><br></pre></td></tr></table></figure> 之后按照文档中的描述：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">npm install <span class="comment">#运行结束后会生成一个node_modules文件</span></span><br><span class="line">npm run build -- contents::zed-mono</span><br><span class="line"><span class="comment">#结果会保存在zed-fonts/dist中</span></span><br><span class="line"><span class="comment">#14:35@ dist % ls</span></span><br><span class="line"><span class="comment">#zed-mono</span></span><br><span class="line"><span class="comment">#14:36@ dist % ls zed-mono </span></span><br><span class="line"><span class="comment">#ttfttf-unhintedwoff2zed-mono.css</span></span><br></pre></td></tr></table></figure></p><p>有时候中间会报一些错误，需要结合实际情况进行修正，例如当我在刚开始安装时，报告错误：找不到<code>External dependency &lt;ttfautohint&gt;</code>。于是我在网上找到<code>ttfautohint</code>文件并下载到本地，并在<code>terminal</code>中运行：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> PATH=<span class="variable">$&#123;PATH&#125;</span>:/ttfautohint的绝对路径</span><br></pre></td></tr></table></figure> 然后重新运行 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm run build -- contents::zed-mono</span><br></pre></td></tr></table></figure>期间可能CPU和ARM的占用会比较高，耗时会比较长，这并不是卡住，只需要多等待一些时间就可以了。</p><h2 id="设置">设置</h2><p>之后进入<code>/dist/zed-mono/ttf</code>，这里会包含很多<code>ttf</code>字体文件，将它们全选后打开：</p><p><img src="../../../../images/zedttf.png" /></p><p>选择安装字体，系统字体册中就可以找到<code>Zed Mono</code>字体：</p><p><img src="../../../../images/zedmono.png" /></p><p>之后打开VsCode，进入设置搜索<code>font</code>，在<code>Font Family</code>处修改为<code>Zed Mono</code>后就会自动加载新字体。</p><h2 id="效果">效果</h2><p>实际效果如下：</p><p><img src="../../../../images/zedshow.png" /></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 工具美化 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 设计 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>如何入门一门小语种之日语</title>
       <link href="/powehi.github.io/2022/08/23/japanese/"/>
       <url>/powehi.github.io/2022/08/23/japanese/</url>
       
