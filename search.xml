@@ -1,6 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Hello World</title>
+    <url>/powehi.github.io/2022/08/20/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very
+first post. Check <a href="https://hexo.io/docs/">documentation</a> for
+more info. If you get any problems when using Hexo, you can find the
+answer in <a
+href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or
+you can ask me on <a
+href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<span id="more"></span>
+<h2 id="quick-start">Quick Start</h2>
+<h3 id="create-a-new-post">Create a new post</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a
+href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="run-server">Run server</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="generate-static-files">Generate static files</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>More info: <a
+href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="deploy-to-remote-sites">Deploy to remote sites</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>More info: <a
+href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+  </entry>
+  <entry>
     <title>经济学原理</title>
     <url>/powehi.github.io/2022/08/21/ECONOMICS/</url>
     <content><![CDATA[<h1 id="我们为什么要学习经济学">我们为什么要学习经济学？</h1>
@@ -35,6 +64,61 @@ id="原理九当政府发行了过多货物时物价上升">原理九：当政�
 <h3
 id="原理十社会面领通货膨胀与失业之间的短期权衡">原理十：社会面领通货膨胀与失业之间的短期权衡</h3></li>
 </ul>
+]]></content>
+      <categories>
+        <category>经济学</category>
+      </categories>
+      <tags>
+        <tag>经济学</tag>
+        <tag>读书记录</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>像经济学家一样思考</title>
+    <url>/powehi.github.io/2022/08/23/economics1/</url>
+    <content><![CDATA[<h2 id="像经济学家一样思考">像经济学家一样思考</h2>
+<p>就像计算机领域的算法工程和软件工程，算法工程师经常会考虑实现一种个方面更优秀的算法，或是在时间上或是在空间上；而软件工程师会利用现实中已经存在的算法，做一些实际上的运用，例如制作一款供人们日常使用的软件。</p>
+<p>经济学家们也分为作为科学家的经济学家，和作为政策顾问的经济学家。为了说明白这两种经济学家的区别，我们需要引入两个专业词汇，<code>实证分析</code>和<code>规范分析</code>。</p>
+<p><strong>实证表述</strong>：实证表述是描述性的，它描述世界中客观运行的事情，这件事情不受个人情感而改变。</p>
+<p><strong>规范表述</strong>：规范表述是规定性的，它试图描述世界应该如何运行，一般不同的经济学家由于价值取向和对事物的科学判断不同，会产生不同的规范表述。</p>
+<span id="more"></span>
+<hr />
+<p><strong>举个例子：</strong></p>
+<p>Portia说：最低工资法引起了失业。</p>
+<p>Noah说：政府应该提高最低工资。</p>
+<p>其中Portia的表述就是实证表述，描述了这个世界是什么样子，而Noah的表述是规范表述，描述了这个世界<em>应该</em>是什么样子
+。</p>
+<hr />
+<h3 id="作为科学家的经济学家">作为科学家的经济学家</h3>
+<p>作为科学家的经济学家努力以科学家的客观性来探讨他们的主题。而它们研究经济学的方法与我们研究物理、生物的方法很大程度上是相通的：提出理论，收集数据，分析数据，证明理论。</p>
+<p><strong>一个科学的本质，是冷静的建立与分析关于世界如何运行理论的科学方法。</strong></p>
+<h4 id="科学方法">科学方法</h4>
+<p>当我们提出一项理论之前，我们需要先假设，再通过现实或实验中的数据来进行验证这项理论。在物理学研究中，当牛顿提出万有引力定律前，他也会在实验室中一遍遍验证两个物体之间的相互作用。但是当一个经济学家想要提出一项理论前，他无法在实验室中模拟验证这项理论，<strong>经济学是一个现实中的科学</strong>，它只可以使用世界向它已经提供的数据来进行研究，因此经济学家们十分关注历史所提供的自然实验。</p>
+<p>历史上的事件之所以具有研究价值，是因为它不仅使我们了解过去的经济，还能给予我们一种评价当前经济理论的视角。</p>
+<h4 id="假设的作用">假设的作用</h4>
+<p>在研究经济学时，由于现实世界纷繁复杂，我们很难以透过如此复杂的现象看到经济规律的本质，所以就如同在物理题中经常看到的字眼--“假设”，在中学时我们为了更容易理解物体的运动，我们常常假设某平面的摩擦力为<span
+class="math inline">\(0\)</span>；当从高空抛下一个物体时，我们也常假设此时的空气阻力为<span
+class="math inline">\(0\)</span>。在经济学中我们也常常这样做，比如假设只存在两件商品以及两个国家，这种假设可以使我们的研究变得容易，并且在这种研究的基础上，可以更容易去理解复杂的现实世界。</p>
+<hr />
+<p>当我们想研究政府改变流通中的货币量会对长期短期经济产生怎样的影响，我们常假设价格完全固定；当我们想了解对长期经济的影响时，又会假设所有价格都是完全可变的。</p>
+<hr />
+<h4 id="经济模型">经济模型</h4>
+<p>数学建模时，我们常常将现实中某些属性数字化，用这些抽象的数据建立模型，以便于忽略一些不重要的影响因素，研究这些属性之间的相互影响；教授解剖学时，我们也常使用一些人体模型，这些模型包括人体的主要器官--心脏、肝脏、肾脏等，从而在学习解剖时不需要关注复杂的肌肉和毛细血管。</p>
+<p>经济学家的模型通常由图形和数字组成，这些模型使我们关注真正重要的东西。</p>
+<ul>
+<li>循环流量图：一个说明货币如何通过市场在家庭与企业之间流动的直观经济模型。</li>
+<li><span
+class="math inline">\(*\)</span>生产可能性边界：表示在可能得到的生产要素与生产技术既定时。一个经济所能生产的产品数量的各种组合的图形。</li>
+<li>关键词：有效率的、无效率的、机会成本</li>
+</ul>
+<h3 id="作为政策顾问的经济学家">作为政策顾问的经济学家</h3>
+<blockquote>
+<p>经济学家和政治哲学家的思想、无论正确与否，实际上都要比一般所想象的更有力量。事实上，这个世界就是由它们统治的。那些自认为能够免受经济学家思想影响的实干家往往也只是某些已故经济学家的俘虏。那些当权狂人信奉的其实也不过是若干年前某些末流学者的狂妄思想。</p>
+<p>-- John Maynard Keynes</p>
+</blockquote>
+<p>但在现实世界中，经济学家的意见由于难以考虑到国家运转的各个方面，所以经济学家的意见并不总是被采纳。</p>
+<p>由于不同经济学家对当前真理的认知存在分歧，比如在消费税和所得税方面，有人认为应该采用消费税，而有些人认为应该采用所得税，并且不同经济学家的价值观不同，比如有人认为穷人和富人应该按收入比例摊付公共支出，也有些人认为穷人和富人应该平分摊付公共支出，导致经济学家之间也经常存在分歧。</p>
+<p>但这种分歧不应该被夸大，在很多时候经济学家对某些事情的主张会达到很高的共识度，比如在是否应该限制租金上限这件事上，大部分经济学家都认为不应该限制租金上限，但市政府还是会不理会经济学家的建议，而对房客收取租金规定上限。</p>
 ]]></content>
       <categories>
         <category>经济学</category>
@@ -196,87 +280,128 @@ class="math inline">\(Ruby\)</span>也在交易中以对自己有利的价格买
       </tags>
   </entry>
   <entry>
-    <title>Hello World</title>
-    <url>/powehi.github.io/2022/08/20/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very
-first post. Check <a href="https://hexo.io/docs/">documentation</a> for
-more info. If you get any problems when using Hexo, you can find the
-answer in <a
-href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or
-you can ask me on <a
-href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+    <title>INTRODUCTION OF THE ROMANOVS</title>
+    <url>/powehi.github.io/2022/09/09/romanoves1/</url>
+    <content><![CDATA[<h2 id="开篇">开篇</h2>
+<p>今天我分享的题目是，《罗曼诺夫王朝》--
+俄国历史上最强盛的王朝，同时也是其历史上最后一个王朝。</p>
+<p>当沙皇可不是一件轻松的事，俄国不是一个容易治理的国家，罗曼诺夫王朝有20位君主，一共统治了304年，从1613年一直到1917年革命爆发、沙皇体质被废除。他们的崛起从伊凡雷帝在位期间开始，到拉斯普京时期结束。</p>
+<p>一些浪漫主义编年史学家喜欢暗示，暗示罗曼诺夫家族受到了诅咒，但其实罗曼诺夫皇朝是蒙古人之后最成功的帝国建设者。罗曼诺夫王朝不仅是皇朝与辉煌的象征，还成了专制暴政的代表，除了凯撒家族之外，没有一个皇朝在大众的想象和文化中占据这样突出的地位。“沙皇(tsar)”这个头衔源自凯撒(Caesar)绝非偶然，恰似俄语中的“皇帝”就是直接照搬拉丁语“imperator”一样。</p>
 <span id="more"></span>
-<h2 id="quick-start">Quick Start</h2>
-<h3 id="create-a-new-post">Create a new post</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a
-href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="run-server">Run server</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="generate-static-files">Generate static files</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a
-href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="deploy-to-remote-sites">Deploy to remote sites</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a
-href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
-  </entry>
-  <entry>
-    <title>像经济学家一样思考</title>
-    <url>/powehi.github.io/2022/08/23/economics1/</url>
-    <content><![CDATA[<h2 id="像经济学家一样思考">像经济学家一样思考</h2>
-<p>就像计算机领域的算法工程和软件工程，算法工程师经常会考虑实现一种个方面更优秀的算法，或是在时间上或是在空间上；而软件工程师会利用现实中已经存在的算法，做一些实际上的运用，例如制作一款供人们日常使用的软件。</p>
-<p>经济学家们也分为作为科学家的经济学家，和作为政策顾问的经济学家。为了说明白这两种经济学家的区别，我们需要引入两个专业词汇，<code>实证分析</code>和<code>规范分析</code>。</p>
-<p><strong>实证表述</strong>：实证表述是描述性的，它描述世界中客观运行的事情，这件事情不受个人情感而改变。</p>
-<p><strong>规范表述</strong>：规范表述是规定性的，它试图描述世界应该如何运行，一般不同的经济学家由于价值取向和对事物的科学判断不同，会产生不同的规范表述。</p>
-<span id="more"></span>
-<hr />
-<p><strong>举个例子：</strong></p>
-<p>Portia说：最低工资法引起了失业。</p>
-<p>Noah说：政府应该提高最低工资。</p>
-<p>其中Portia的表述就是实证表述，描述了这个世界是什么样子，而Noah的表述是规范表述，描述了这个世界<em>应该</em>是什么样子
-。</p>
-<hr />
-<h3 id="作为科学家的经济学家">作为科学家的经济学家</h3>
-<p>作为科学家的经济学家努力以科学家的客观性来探讨他们的主题。而它们研究经济学的方法与我们研究物理、生物的方法很大程度上是相通的：提出理论，收集数据，分析数据，证明理论。</p>
-<p><strong>一个科学的本质，是冷静的建立与分析关于世界如何运行理论的科学方法。</strong></p>
-<h4 id="科学方法">科学方法</h4>
-<p>当我们提出一项理论之前，我们需要先假设，再通过现实或实验中的数据来进行验证这项理论。在物理学研究中，当牛顿提出万有引力定律前，他也会在实验室中一遍遍验证两个物体之间的相互作用。但是当一个经济学家想要提出一项理论前，他无法在实验室中模拟验证这项理论，<strong>经济学是一个现实中的科学</strong>，它只可以使用世界向它已经提供的数据来进行研究，因此经济学家们十分关注历史所提供的自然实验。</p>
-<p>历史上的事件之所以具有研究价值，是因为它不仅使我们了解过去的经济，还能给予我们一种评价当前经济理论的视角。</p>
-<h4 id="假设的作用">假设的作用</h4>
-<p>在研究经济学时，由于现实世界纷繁复杂，我们很难以透过如此复杂的现象看到经济规律的本质，所以就如同在物理题中经常看到的字眼--“假设”，在中学时我们为了更容易理解物体的运动，我们常常假设某平面的摩擦力为<span
-class="math inline">\(0\)</span>；当从高空抛下一个物体时，我们也常假设此时的空气阻力为<span
-class="math inline">\(0\)</span>。在经济学中我们也常常这样做，比如假设只存在两件商品以及两个国家，这种假设可以使我们的研究变得容易，并且在这种研究的基础上，可以更容易去理解复杂的现实世界。</p>
-<hr />
-<p>当我们想研究政府改变流通中的货币量会对长期短期经济产生怎样的影响，我们常假设价格完全固定；当我们想了解对长期经济的影响时，又会假设所有价格都是完全可变的。</p>
-<hr />
-<h4 id="经济模型">经济模型</h4>
-<p>数学建模时，我们常常将现实中某些属性数字化，用这些抽象的数据建立模型，以便于忽略一些不重要的影响因素，研究这些属性之间的相互影响；教授解剖学时，我们也常使用一些人体模型，这些模型包括人体的主要器官--心脏、肝脏、肾脏等，从而在学习解剖时不需要关注复杂的肌肉和毛细血管。</p>
-<p>经济学家的模型通常由图形和数字组成，这些模型使我们关注真正重要的东西。</p>
-<ul>
-<li>循环流量图：一个说明货币如何通过市场在家庭与企业之间流动的直观经济模型。</li>
-<li><span
-class="math inline">\(*\)</span>生产可能性边界：表示在可能得到的生产要素与生产技术既定时。一个经济所能生产的产品数量的各种组合的图形。</li>
-<li>关键词：有效率的、无效率的、机会成本</li>
-</ul>
-<h3 id="作为政策顾问的经济学家">作为政策顾问的经济学家</h3>
-<blockquote>
-<p>经济学家和政治哲学家的思想、无论正确与否，实际上都要比一般所想象的更有力量。事实上，这个世界就是由它们统治的。那些自认为能够免受经济学家思想影响的实干家往往也只是某些已故经济学家的俘虏。那些当权狂人信奉的其实也不过是若干年前某些末流学者的狂妄思想。</p>
-<p>-- John Maynard Keynes</p>
-</blockquote>
-<p>但在现实世界中，经济学家的意见由于难以考虑到国家运转的各个方面，所以经济学家的意见并不总是被采纳。</p>
-<p>由于不同经济学家对当前真理的认知存在分歧，比如在消费税和所得税方面，有人认为应该采用消费税，而有些人认为应该采用所得税，并且不同经济学家的价值观不同，比如有人认为穷人和富人应该按收入比例摊付公共支出，也有些人认为穷人和富人应该平分摊付公共支出，导致经济学家之间也经常存在分歧。</p>
-<p>但这种分歧不应该被夸大，在很多时候经济学家对某些事情的主张会达到很高的共识度，比如在是否应该限制租金上限这件事上，大部分经济学家都认为不应该限制租金上限，但市政府还是会不理会经济学家的建议，而对房客收取租金规定上限。</p>
+<p>Today The title which I will be shared is "Romanov Dynasty" - the
+most powerful dynasty in Russia's history, and also the last one in its
+history.</p>
+<p>Being a tsar was not an easy task, as Russia was not an easy country
+to govern. The Romanov dynasty had 20 monarchs who ruled for a total of
+304 years, from 1613 until the outbreak of the revolution and the
+abolition of the tsarist physique in 1917. Their rise to power began
+during the reign of Иван Грозный and ended under Rasputin.</p>
+<p>Some Romantic chroniclers like to suggest that the Romanovs were
+cursed, but in fact the Romanov dynasty was the most successful empire
+builder since the Mongols. The Romanov dynasty was not only a symbol of
+royalty and splendor, but also became a representative of despotic
+tyranny, and with the exception of the Caesars, no imperial dynasty has
+occupied such a prominent place in the popular imagination and culture.
+It is no accident that the title "tsar" is derived from Caesar, just
+like the Russian word "emperor" is a direct copy of the Latin word
+"imperator".</p>
+<h3 id="王朝的始末">王朝的始末</h3>
+<p>为罗曼诺夫皇朝的故事拉开序幕又闭幕的，是两个十几岁的男孩，他们都天真、羸弱而疾病缠身，都在革命、战争与屠戮的年代成长，他们的父母都为他们争取最高的奖励--皇位，但没人能保护他们，因为他们的家族卷入了俄国权利的残酷游戏。</p>
+<p>尽管他们有这么多相似之处，但他们最终走向截然不同的方向，其中一人的生活刚刚开始，而另一个人的末日已经降临。</p>
+<p>1613年，米哈伊尔进入了神圣莫斯科城，所有教堂都响起了钟声；男人们续着长须、身穿长袍，头戴紫貂或黑色狐狸毛皮的帽子；女人们深居闺房，蒙着面纱被藏匿起来。</p>
+<p>在隆重的游行队伍的簇拥下，男孩身穿拜占庭风格的金色长袍，穿过圣殿山，进入拥有五座穹顶的圣母升天大教堂，此后，克里姆林宫的三十三座大钟被敲响，廷臣们用鲜红色软垫捧着皇冠、圣球和权杖走出红色走廊，走下红色楼梯，穿过大教堂广场，走向圣母升天大教堂。伴随着僧人的吟唱，男孩在圣像前接受加冕。</p>
+<p>直到1917年，那个起源于黑白条纹旗覆盖的土地，在几乎所有国家都传播开来的强大思想，随着王朝一艘战舰上的炮响为王朝敲响了丧钟，自此在世界上存在了304年的罗曼诺夫王朝，带着它的满身创伤和记忆，和霍亨索伦，哈布斯堡，奥斯曼等长久王朝的名字一起，消失在了历史的长河中。</p>
+<p>Kicking off and closing the story of the Romanov dynasty are two
+teenage boys, both naive, frail and disease-ridden, both growing up in a
+time of revolution, war and slaughter, both with parents gave them the
+highest prize of all - the throne - but with no one to protect them
+because they have embroiled in the cruel game of Russian power.</p>
+<p>Despite all their similarities, they end up heading in very different
+directions, with life just beginning for one of them and the end already
+upon the other.</p>
+<p>In 1613, Mikhail entered the holy city of Moscow, and all the
+churches rang their bells; the men keep their long beards , wear the
+robes and with hats of sable or black fox fur; the women were deep in
+their harems, veiled and hidden away.</p>
+<p>Surrounded by a solemn procession, the boy, dressed in golden robes
+in Byzantine style, crossed the Temple Mount and entered the Assumption
+Cathedral which with five domes, then, with the thirty-three bells of
+the Kremlin were rung, the courtiers carried crowns, sacred spheres and
+scepters on bright red cushions out of the red corridor, down the red
+staircase, across the Cathedral Square and towards the Assumption
+Cathedral. With the chanting of the monks, the boy is crowned in front
+of the icon.</p>
+<p>Until 1917, a great and powerful thought, which derives in the land
+which covered by black and white flag, and widespreaded in the world,
+knock the death knell for the empire along with the gunfire in a
+warship. Since, the Romanove Dynasty, which had existed in the world for
+304 years, disappeared into history with its wounds and memories, along
+with the names of Hohenzollern, Habsburg, Ottoman and other long-lasting
+dynasties.</p>
+<h3 id="标志性人物">标志性人物</h3>
+<p>在这段历史中，我们最熟知的人物，或许是彼得大帝、叶卡捷琳娜女皇、拿破仑战争期间的沙皇亚历山大一世或者最后一位沙皇尼古拉二世。</p>
+<p>彼得大帝是俄罗斯历史上最伟大的帝王。他继位后积极兴办工场，发展贸易，发展文化、教育和科研事业，同时改革军事，建立正规的陆海军，加强封建专制的中央集权制。继而发动了战争，夺得波罗的海出海口。可以说，近代俄国的政治、经济、文化、教育、科技等方面的发展史无不源于彼得大帝时代。彼得大帝将国家发展重心西移，邻近欧洲各国，便于接受欧洲的开化文明，并建立起圣彼得堡的领导势力，结束俄国由莫斯科政权统治以来的黑暗时期，带领俄国进入文明新时代。</p>
+<p>尽管彼得大帝之后的继位女皇也叫做叶卡捷琳娜，但她只在位了不到两年时间，我们常说的可以被称为“大帝”的叶卡捷琳娜女皇指的是叶卡捷琳娜二世，是彼得大帝的外孙、彼得三世的妻子。</p>
+<p>叶卡捷琳娜二世在位34年，是彼得大帝改革的忠实继承者，使俄国再次回到发展的轨道上来。叶卡捷琳娜二世统治时期，俄罗斯成为名副其实的欧洲最强大的国家，她不仅建立了横跨欧亚的俄罗斯帝国，而且她的风流韵事和男宠数不胜数，子女全是私生的，与中国的“武则天”极其相似，甚至有过之而无不及。</p>
+<p>亚历山大一世是俄罗斯罗曼诺夫王朝第十四位沙皇，俄罗斯帝国的第十位皇帝，由于他在拿破仑战争中领导反法同盟击败法兰西帝国皇帝拿破仑一世，复兴欧洲王室，从而被欧洲各国贵族称为“欧洲的救世主”，加上其做为战后欧洲神圣同盟的领导者，故又被称为“神圣王”。他的统治前期主要在战争中渡过，后期则沉寂在和宫廷仕女游玩，以及对于神秘主义的研究上，开始渐渐不理政事，历史对他的评价往往呈现为两极分化的，他的行为不能被理解，因此又被称为”北方的斯芬克斯”和“两面神”。</p>
+<p>Perhaps the figures who is the most familiar by us in this history
+are Peter the Great, Catherine II, Tsar Alexander I during the
+Napoleonic Wars or the last Tsar Nicholas II.</p>
+<p>Peter the Great was the greatest emperor in the history of Russia.
+After he succeeded to the throne, he actively built workshops, developed
+trade, culture, education and scientific research, while reforming the
+military, establishing a regular army, navy and strengthening the
+centralized feudal autocracy. Subsequently, he waged war and occupied
+the ports of the Baltic Sea. It can be said that the history of
+political, economic, cultural, educational, scientific and technological
+development of modern Russia has its roots in this time of Peter the
+Great. Peter the Great shifted the focus of the country's development
+westward, close to European countries, facilitating the acceptance of
+enlightened European civilization and establishing the leadership of St.
+Petersburg, which ended the dark period of Russia's rule by the Moscow
+regime and led Russia into a new era of civilization.</p>
+<p>Although the empress who succeeded Peter the Great was also called
+Catherine, she reigned for less than two years, and the empress we often
+refer to as "the Great" was Catherine II, the wife of the grandson of
+Peter the Great.</p>
+<p>Catherine II reigned for 34 years and was a faithful successor of
+Peter the Great's reforms, which brought Russia back to the path of
+development. During the reign of Catherine II, Russia became the most
+powerful country in Europe, and she not only built the Russian Empire
+across Europe and Asia, but also had countless affairs and male pets,
+and all her children were born out of wedlock, similar to the Chinese
+"Wu Zetian”.</p>
+<p>Alexander I was the fourteenth tsar of the Romanov dynasty of Russia
+and the tenth emperor of the Russian Empire. He was called the "Savior
+of Europe" by the nobles of Europ, because he led the Anti-French
+Alliance to defeat the French Emperor Napoleon I in the Napoleonic Wars
+and revived the European royal family. He was also known as the "Holy
+King" because he was the leader of the Holy Alliance in Europe after the
+war. He spent the first part of his reign in wars, but the second part
+of his reign in the study of mysticism and the pleasure of courtesans.
+He is also known as the "Sphinx of the North" and the "God of Two
+Faces".</p>
+<p>“我们历史上最大的罪人，是那些自己放弃权力的软蛋，尼古拉二世和米哈伊文·戈尔巴乔夫。他们竟允许权利被歇斯底里的狂人和疯子夺走。”-普金曾经说过。</p>
+<p>尼古拉二世缺乏一个做为改革者的资质，他懦弱无能、贪心又轻敌、紧握权利固步自封，他听信一个宗教骗子的谗言，对维特与斯托雷平心生猜疑乃至罢黜不用，使俄国的现代化计划荒废。最终1917年，在叶卡捷琳堡，伊帕基耶夫宅邸的地下室里，尼古拉二世连同新继位的年幼沙皇米哈伊尔被枪决。</p>
+<p>As for Nicholas II</p>
+<p>Pugin once said "The greatest sinners in our history are the
+soft-heads who themselves gave up power, Nicholas II and Mikhail Ivan
+Gorbachev. How dare they allow power to be taken away from them by
+hysterical maniacs and madmen."</p>
+<p>Nicholas II lacked the qualifications of a reformer, he was
+incompetent, greedy and gullible, clinging to power, he listened to the
+slander of a religious charlatan, was suspicious of Vetter and Stolypin
+and even deposed them, finally led to the abandonment of Russia's
+modernization program. In 1917, in the basement of the Ipakiyev
+residence in Ekaterinburg, Nicholas II was executed by firing squad,
+together with the new young Tsar Mikhail.</p>
 ]]></content>
       <categories>
-        <category>经济学</category>
+        <category>历史学</category>
       </categories>
       <tags>
-        <tag>经济学</tag>
         <tag>读书记录</tag>
+        <tag>历史学</tag>
       </tags>
   </entry>
   <entry>
@@ -343,90 +468,6 @@ class="math inline">\(O(n\times{n!})\)</span>。</p>
         <tag>分治递归</tag>
         <tag>回朔法</tag>
         <tag>刷题记录</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>INTRODUCTION OF THE ROMANOVS</title>
-    <url>/powehi.github.io/2022/09/09/romanoves1/</url>
-    <content><![CDATA[<h2 id="开篇">开篇</h2>
-<p>今天我分享的题目是，《罗曼诺夫王朝》--
-俄国历史上最强盛的王朝，同时也是其历史上最后一个王朝。</p>
-<p>当沙皇可不是一件轻松的事，俄国不是一个容易治理的国家，罗曼诺夫王朝有20位君主，一共统治了304年，从1613年一直到1917年革命爆发、沙皇体质被废除。他们的崛起从伊凡雷帝在位期间开始，到拉斯普京时期结束。</p>
-<p>一些浪漫主义编年史学家喜欢暗示，暗示罗曼诺夫家族受到了诅咒，但其实罗曼诺夫皇朝是蒙古人之后最成功的帝国建设者。罗曼诺夫王朝不仅是皇朝与辉煌的象征，还成了专制暴政的代表，除了凯撒家族之外，没有一个皇朝在大众的想象和文化中占据这样突出的地位。“沙皇(tsar)”这个头衔源自凯撒(Caesar)绝非偶然，恰似俄语中的“皇帝”就是直接照搬拉丁语“imperator”一样。</p>
-<span id="more"></span>
-<p>Today The title which I will be shared is "Romanov Dynasty" - the
-most powerful dynasty in Russia's history, and also the last one in its
-history.</p>
-<p>Being a tsar was not an easy task, as Russia was not an easy country
-to govern. The Romanov dynasty had 20 monarchs who ruled for a total of
-304 years, from 1613 until the outbreak of the revolution and the
-abolition of the tsarist physique in 1917. Their rise to power began
-during the reign of Иван Грозный and ended under Rasputin.</p>
-<p>Some Romantic chroniclers like to suggest that the Romanovs were
-cursed, but in fact the Romanov dynasty was the most successful empire
-builder since the Mongols. The Romanov dynasty was not only a symbol of
-royalty and splendor, but also became a representative of despotic
-tyranny, and with the exception of the Caesars, no imperial dynasty has
-occupied such a prominent place in the popular imagination and culture.
-It is no accident that the title "tsar" is derived from Caesar, just
-like the Russian word "emperor" is a direct copy of the Latin word
-"imperator".</p>
-<h3 id="王朝的始末">王朝的始末</h3>
-<p>为罗曼诺夫皇朝的故事拉开序幕又闭幕的，是两个十几岁的男孩，他们都天真、羸弱而疾病缠身，都在革命、战争与屠戮的年代成长，他们的父母都为他们争取最高的奖励--皇位，但没人能保护他们，因为他们的家族卷入了俄国权利的残酷游戏。</p>
-<p>尽管他们有这么多相似之处，但他们最终走向截然不同的方向，其中一人的生活刚刚开始，而另一个人的末日已经降临。</p>
-<p>1613年，米哈伊尔进入了神圣莫斯科城，所有教堂都响起了钟声；男人们续着长须、身穿长袍，头戴紫貂或黑色狐狸毛皮的帽子；女人们深居闺房，蒙着面纱被藏匿起来。</p>
-<p>在隆重的游行队伍的簇拥下，男孩身穿拜占庭风格的金色长袍，穿过圣殿山，进入拥有五座穹顶的圣母升天大教堂，此后，克里姆林宫的三十三座大钟被敲响，廷臣们用鲜红色软垫捧着皇冠、圣球和权杖走出红色走廊，走下红色楼梯，穿过大教堂广场，走向圣母升天大教堂。伴随着僧人的吟唱，男孩在圣像前接受加冕。</p>
-<p>直到1917年，那个起源于黑白条纹旗覆盖的土地，在几乎所有国家都传播开来的强大思想，随着王朝一艘战舰上的炮响为王朝敲响了丧钟，自此在世界上存在了304年的罗曼诺夫王朝，带着它的满身创伤和记忆，和霍亨索伦，哈布斯堡，奥斯曼等长久王朝的名字一起，消失在了历史的长河中。</p>
-<p>Kicking off and closing the story of the Romanov dynasty are two
-teenage boys, both naive, frail and disease-ridden, both growing up in a
-time of revolution, war and slaughter, both with parents gave them the
-highest prize of all - the throne - but with no one to protect them
-because they have embroiled in the cruel game of Russian power.</p>
-<p>Despite all their similarities, they end up heading in very different
-directions, with life just beginning for one of them and the end already
-upon the other.</p>
-<p>In 1613, Mikhail entered the holy city of Moscow, and all the
-churches rang their bells; the men keep their long beards , wear the
-robes and with hats of sable or black fox fur; the women were deep in
-their harems, veiled and hidden away.</p>
-<p>Surrounded by a solemn procession, the boy, dressed in golden robes
-in Byzantine style, crossed the Temple Mount and entered the Assumption
-Cathedral which with five domes, then, with the thirty-three bells of
-the Kremlin were rung, the courtiers carried crowns, sacred spheres and
-scepters on bright red cushions out of the red corridor, down the red
-staircase, across the Cathedral Square and towards the Assumption
-Cathedral. With the chanting of the monks, the boy is crowned in front
-of the icon.</p>
-<p>Until 1917, a great and powerful thought, which derives in the land
-which covered by black and white flag, and widespreaded in the world,
-knock the death knell for the empire along with the gunfire in a
-warship. Since, the Romanove Dynasty, which had existed in the world for
-304 years, disappeared into history with its wounds and memories, along
-with the names of Hohenzollern, Habsburg, Ottoman and other long-lasting
-dynasties.</p>
-<h3 id="标志性人物">标志性人物</h3>
-<p>在这段历史中，我们最熟知的人物，或许是彼得大帝、叶卡捷琳娜女皇、拿破仑战争期间的沙皇亚历山大一世或者最后一位沙皇尼古拉二世。</p>
-]]></content>
-      <categories>
-        <category>历史学</category>
-      </categories>
-      <tags>
-        <tag>读书记录</tag>
-        <tag>历史学</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>《 THE ROMANOVS 》- 罗曼诺夫王朝</title>
-    <url>/powehi.github.io/2022/08/22/romanovs/</url>
-    <content><![CDATA[<p><strong>“我们历史上最大的罪人，是那些自己放弃权力的软蛋，尼古拉二世和米哈伊文·戈尔巴乔夫。他们竟允许权利被歇斯底里的狂人和疯子夺走。”</strong>
---- 弗拉基米尔·弗拉基米罗维奇·普京</p>
-]]></content>
-      <categories>
-        <category>历史学</category>
-      </categories>
-      <tags>
-        <tag>读书记录</tag>
-        <tag>历史学</tag>
       </tags>
   </entry>
   <entry>
@@ -678,6 +719,20 @@ class="math inline">\(k\)</span>近邻法、感知机、决策树、逻辑斯蒂
       <tags>
         <tag>读书记录</tag>
         <tag>统计学习</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>《 THE ROMANOVS 》- 罗曼诺夫王朝</title>
+    <url>/powehi.github.io/2022/08/22/romanovs/</url>
+    <content><![CDATA[<p><strong>“我们历史上最大的罪人，是那些自己放弃权力的软蛋，尼古拉二世和米哈伊文·戈尔巴乔夫。他们竟允许权利被歇斯底里的狂人和疯子夺走。”</strong>
+--- 弗拉基米尔·弗拉基米罗维奇·普京</p>
+]]></content>
+      <categories>
+        <category>历史学</category>
+      </categories>
+      <tags>
+        <tag>读书记录</tag>
+        <tag>历史学</tag>
       </tags>
   </entry>
 </search>
