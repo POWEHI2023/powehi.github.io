@@ -169,6 +169,276 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/12/16/mmap/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/powehi.github.io/images/avatar.gif">
+      <meta itemprop="name" content="北落师门">
+      <meta itemprop="description" content="思考不是一种廉价的赎罪券，自由也不是一种无限后退的虚无，而是对未来的，终将发生的命运的忠诚。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="北落师门">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/powehi.github.io/2022/12/16/mmap/" class="post-title-link" itemprop="url">mmap</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2022-12-16 14:59:45" itemprop="dateCreated datePublished" datetime="2022-12-16T14:59:45+08:00">2022-12-16</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-12-17 10:51:46" itemprop="dateModified" datetime="2022-12-17T10:51:46+08:00">2022-12-17</time>
+              </span>
+
+          
+            <span id="/powehi.github.io/2022/12/16/mmap/" class="post-meta-item leancloud_visitors" data-flag-title="mmap" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/powehi.github.io/2022/12/16/mmap/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/powehi.github.io/2022/12/16/mmap/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="mmap的问题">MMAP的问题</h1>
+<h2 id="事务安全">事务安全：</h2>
+<p>使用mmap来代替传统的buffer
+pool，会由操作系统来将暂时用不到的block从内存中转移到外存，这个交换时间不由DBMSs来决定，所以有时候会忽略已经提交的事务，DBMS不能阻止这些交换，也不会在交换时得到任何提示。</p>
+<p>因此，当DBMSs使用基于mmap的技术时，需要部署复杂的协议来保证透明页交换带来的事务安全问题。</p>
+<p>我们将处理更新的方法分三类：OS copy-on-write、user space
+copy-on-write、shadow paging</p>
+<h3 id="os-copy-on-write">1. OS copy-on-write</h3>
+<p>创建数据库文件的两个副本，这两个副本初始都指向相同的物理页，第一个作为主副本，第二个作为进行事务更新的私有工作区。（DBMS使用MAP_PRIVATE
+flag来创建主工作区，MongoDB's MMAPv1存储引擎使用这种方法）</p>
+<p>更新时，DBMS在私有工作区中更改页面，操作系统将更改的页面复制到新的物理页，并将虚拟地址重映射到新的物理页，然后应用这次修改。主副本不会意识到这次修改，操作系统也不会保持旧的副本。</p>
+<p>为了提供durability，DBMS就必须预写记录修改的日志，当事务提交的时候，DBMS刷新相关的日志到外存，并用单独的后台线程将修改应用到主副本。</p>
+<p>其中更新页面时需要创新新的副本，这可能会导致两个问题： 1.
+DBMS必须确保最近的一个更新被应用到主副本，才可以执行与其冲突的新事务，这就需要额外的记录空间来跟踪更新的状态
+2.
+私有工作区的数量会随着更新的发生持续增长，最终DBMS可能会有两个完全相同的数据库副本在内存中</p>
+<ul>
+<li>为了解决第二个问题，DBMS可以使用mremap的系统调用定期清理私有工作区，然而，在执行操作前DBMS还必须确保私有工作区中的更新都已经应用到主副本，并且为了避免在mremap期间丢失更新，DBMS还必须在OS完成对工作区的压缩时阻塞挂起的修改。</li>
+</ul>
+<h3 id="user-space-copy-on-write">2. user space copy-on-write</h3>
+<p>不同于OS
+copy-on-write，这种方法需要手动将mmap-backed内存中被修改的页面复制到用户空间中单独维护的缓冲区。（SQLite、MonetDB、RavenDB都是使用这种方法的变体）</p>
+<p>更新时，DBMS将修改应用于副本，并且创建对应修改的日志，DBMS通过将日志提交给外存来提交这些修改，此时可以安全地将修改后的页应用到mmap-backed内存，由于复制整个页是很浪费的，因此一些DBMSs支持直接把预写日志应用到基于mmap的内存。（应该直接在映射的原空间中修改，不需要在修改后修改mmap映射关系）</p>
+<h3 id="shadow-paging">3. shadow paging</h3>
+<p>LMDB是这种方式的主要支持者，这种方式基于System R的shadow
+paging设计。</p>
+<p>使用shadow paging时，DBMS维护数据库单独的primary copy和shadow
+copy，这两者都基于mmap，更新时DBMS首先从primary
+copy中将受影响的页复制到shadow copy中，然后再shadow
+copy上应用更新，提交更新时需要使用msync将shadow
+copy中的修改刷新到外存中，然后将shadow copy作为primary copy，将primary
+copy做为shadow copy。</p>
+<p>尽管这种方法并不复杂，但DBMS必须确保事务之间不会冲突，或者只看到部分更新。例如LMBD通过只允许一个写入来解决这个问题。</p>
+<h2 id="io停止">I/O停止</h2>
+<p>使用传统的buffer
+poll时，为了避免查询时的线程阻塞，可以使用异步I/O，DBMS可以为不连续的页面异步的发出读请求，但是mmap不支持异步读。</p>
+<p>因为操作系统可以透明地（不被察觉的）将页移出内存，此时如果只读查询需要访问被移出的页，则会触发页面阻塞错误，换句话说，由于DBMS不知道是否页面在内存中，因此访问任何页时都可能会导致意外的I/O停止。</p>
+<p>为了解决这个问题，DBMS可以使用系统调用，最显而易见的方案是可以使用mlock来将DBMS预期会在近期再次访问的页面固定在内存中。不幸的是操作系统限制单个进程可以锁定的内存大小，因为如果再内存中固定太多页可能导致操作系统或进程出错。DBMS需要小心地跟踪并且解除对页面的固定，以便操作系统可以将页换出内存。</p>
+<p>另一种潜在的解决方案是使用madvise来为操作系统提供关于查询的预期访问模式的提示。<em>例如</em>，当DBMS需要执行顺序扫描时，可以提供MADV_SEQUENTIAL标记给madvise，相当于告诉操作系统可以在一个页面被读以后换出页面，同时预换入将要访问的与其相邻的页面。这种方法相比mlock消耗更小，控制也更少，只提供可以被操作系统忽略的提示。但是，如果对操作系统提供了错误的提示（例如随机访问时的MADV_SEQUENTIAL）可能会对性能产生严重影响。</p>
+<p>还有一种方法是使用额外的线程来预取页面，当发生页面错误时只会阻塞额外线程，而不是主线程，这些方案虽然可能解决问题，但同时也会引入额外相关的复杂性而违背当初使用mmap的初衷。</p>
+<h2 id="错误处理">错误处理</h2>
+<p>DBMS的核心职责之一是确保数据的完整性，因此错误处理至关重要。例如一些DBMS维护页面级校验和以检验I/O期间的数据损坏。</p>
+<p>当在外存读取页面时，DBMS需要通过存储在头部的校验和来验证页面的内容，而当使用mmap时，DBMS需要在访问每个页面时都验证校验和，因为操作系统可能在某个时间点将页面交换。</p>
+<p>一些DBMSs使用内存不安全语言编写，意味着指针错误可能会破坏内存中的页面，defensively
+coded buffer
+pool可以在这些被破坏的页面写入外存时检查错误，但是mmap会默默将这些被破坏的页存入外存的备份文件中。</p>
+<p>鉴于传统的buffer
+pool允许开发者在单个模块中包含I/O错误处理，在基于mmap的内存交互代码中，也可以通过复杂的信号处理产生一个必须由DBMS处理的SIGBUS。</p>
+<h2 id="性能问题">性能问题</h2>
+<p>关于mmap的透明页交换，最显著的缺点就是对性能的影响。即使上面提到的所有问题都可以通过开发者巧妙地实现来克服，但如果不重新设计操作系统，那么mmap的瓶颈就不可能被克服。</p>
+<p>传统观点认为mmap应该优于传统的文件I/O，因为它避免了两个主要的开销，显式读写系统调用的开销（因为操作系统处理了页面映射与页面错误）、用户空间中额外的缓存空间（直接使用操作系统页面缓存中的指针），mmap还可以降低总内存消耗，因为数据不会拷贝出现在用户空间。</p>
+<p>由于有这些优势，我们可以预期，随着出现更好的有更大带宽的闪存出现，mmap和传统文件I/O之间的性能差距会进一步增大，但出乎意料的，操作系统的页面换出机制，对于在高带宽的外存上大于内存的DBMS工作负载，不能扩展超出几个线程。这些问题被忽视可能因为过去I/O带宽没这么高。</p>
+<p>具体来说，发现了困扰mmap的三个关键瓶颈： 1. 页表竞争 2.
+单线程页面换出 3. TLB故障</p>
+<p>对操作系统的复杂调整可能部分缓解前两个问题，但TLB故障问题明显要复杂得多。当核心需要使远程的TLB中映射无效时，在页面换出期间就会发生TLB故障，虽然对本地TLB的刷新成本低廉，但通过处理器中断同步远程TLB可能需要数千个时钟周期，解决这一问题的方法包括对处理器微架构的修改，或者对操作系统进行额外的修改。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/09/19/englishissue/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/powehi.github.io/images/avatar.gif">
+      <meta itemprop="name" content="北落师门">
+      <meta itemprop="description" content="思考不是一种廉价的赎罪券，自由也不是一种无限后退的虚无，而是对未来的，终将发生的命运的忠诚。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="北落师门">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/powehi.github.io/2022/09/19/englishissue/" class="post-title-link" itemprop="url">220819-英语发表作业</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2022-09-19 15:50:22" itemprop="dateCreated datePublished" datetime="2022-09-19T15:50:22+08:00">2022-09-19</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-09-21 15:01:29" itemprop="dateModified" datetime="2022-09-21T15:01:29+08:00">2022-09-21</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/powehi.github.io/categories/%E4%BD%9C%E4%B8%9A/" itemprop="url" rel="index"><span itemprop="name">作业</span></a>
+                </span>
+            </span>
+
+          
+            <span id="/powehi.github.io/2022/09/19/englishissue/" class="post-meta-item leancloud_visitors" data-flag-title="220819-英语发表作业" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/powehi.github.io/2022/09/19/englishissue/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/powehi.github.io/2022/09/19/englishissue/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="why-do-we-need-to-study-intercultural-communication">Why do we
+need to study intercultural communication ?</h1>
+<p>I think we can look at this question in two perspectives</p>
+<blockquote>
+<p>, first we look in a Macro-perspective, then we use a
+Micro-perspective, look at this question in our daily life.</p>
+</blockquote>
+<blockquote>
+<p>In Macro-perspective,</p>
+</blockquote>
+<p>First, as conclution, intercultural communication is as essential
+activation, and no one who participate international business can ignore
+the part of learning communication, as nobody can deal with a business
+trade with another without any communication. Almost we all know, the
+culture diverse from two different countries, in some area of the world,
+people pose like "OK" to express they are ready or something have been
+done, but perhapes in another area, the same posture express something
+means humiliation. So it is important to study intercultural
+communication if we need deal someting with foreign people.</p>
+<blockquote>
+<p>In Micro-perspective, intercultural communication maybe not as
+important as in international business, but not important dose not mean
+it is useless, we can also borden our horizen about this world, learn
+how a foreigner spend a day, it can also make us more wisdom, help us
+understand the foreign literature, to be a nutshell, studing
+interculture communication is interesting. So I think it is a good
+choice to spend some boring time.</p>
+</blockquote>
+<p>Second, daily intercultural communication maybe not as important as
+in international business, but not important dose not mean it is
+useless, we can also borden our horizen about this world, learn how a
+foreigner spend a day, it can also make us more wisdom, help us
+understand the foreign literature, to be a nutshell, studing
+interculture communication is interesting. So I think it is a good
+choice to study interculture communication, especially it can help up
+spend some boring time.</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://example.com/2022/09/09/romanoves1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1039,100 +1309,11 @@ class="math inline">\(c\)</span>。</p>
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/08/20/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/powehi.github.io/images/avatar.gif">
-      <meta itemprop="name" content="北落师门">
-      <meta itemprop="description" content="思考不是一种廉价的赎罪券，自由也不是一种无限后退的虚无，而是对未来的，终将发生的命运的忠诚。">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="北落师门">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/powehi.github.io/2022/08/20/hello-world/" class="post-title-link" itemprop="url">Hello World</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2022-08-20 16:46:32" itemprop="dateCreated datePublished" datetime="2022-08-20T16:46:32+08:00">2022-08-20</time>
-            </span>
-
-          
-            <span id="/powehi.github.io/2022/08/20/hello-world/" class="post-meta-item leancloud_visitors" data-flag-title="Hello World" title="阅读次数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">阅读次数：</span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/powehi.github.io/2022/08/20/hello-world/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/powehi.github.io/2022/08/20/hello-world/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very
-first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for
-more info. If you get any problems when using Hexo, you can find the
-answer in <a
-target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or
-you can ask me on <a
-target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/powehi.github.io/2022/08/20/hello-world/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/powehi.github.io/page/2/">2</a><a class="extend next" rel="next" href="/powehi.github.io/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+  </nav>
 
 
 
@@ -1202,20 +1383,20 @@ target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitH
       <div class="site-state-item site-state-posts">
           <a href="/powehi.github.io/archives/">
         
-          <span class="site-state-item-count">9</span>
+          <span class="site-state-item-count">11</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/powehi.github.io/categories/">
           
-        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-count">7</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/powehi.github.io/tags/">
           
-        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-count">9</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>

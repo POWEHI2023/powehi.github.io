@@ -20,24 +20,19 @@
     var CONFIG = {"hostname":"example.com","root":"/powehi.github.io/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="前言 听说最近Atom团队在Alpha测试一款新的编辑器Zed，使用Rust编写，由GPU来渲染用户界面，支持多人实时协同，目前已经支持包括C&#x2F;C++、Python、GO、JavaScript、Markdown、Rust等11种语言，而他们的字体Zed-Mono在我看来具有一种更加舒适的设计，在他人分享的图片上看起来感觉比vscode的原生字体更加生动，因此我在这里分享一下我安装这款字体的经历。">
+  <meta name="description" content="MMAP的问题 事务安全： 使用mmap来代替传统的buffer pool，会由操作系统来将暂时用不到的block从内存中转移到外存，这个交换时间不由DBMSs来决定，所以有时候会忽略已经提交的事务，DBMS不能阻止这些交换，也不会在交换时得到任何提示。 因此，当DBMSs使用基于mmap的技术时，需要部署复杂的协议来保证透明页交换带来的事务安全问题。 我们将处理更新的方法分三类：OS copy-">
 <meta property="og:type" content="article">
-<meta property="og:title" content="一款好看的字体Zed Mono">
-<meta property="og:url" content="http://example.com/2022/08/24/setzedfont/index.html">
+<meta property="og:title" content="mmap">
+<meta property="og:url" content="http://example.com/2022/12/16/mmap/index.html">
 <meta property="og:site_name" content="北落师门">
-<meta property="og:description" content="前言 听说最近Atom团队在Alpha测试一款新的编辑器Zed，使用Rust编写，由GPU来渲染用户界面，支持多人实时协同，目前已经支持包括C&#x2F;C++、Python、GO、JavaScript、Markdown、Rust等11种语言，而他们的字体Zed-Mono在我看来具有一种更加舒适的设计，在他人分享的图片上看起来感觉比vscode的原生字体更加生动，因此我在这里分享一下我安装这款字体的经历。">
+<meta property="og:description" content="MMAP的问题 事务安全： 使用mmap来代替传统的buffer pool，会由操作系统来将暂时用不到的block从内存中转移到外存，这个交换时间不由DBMSs来决定，所以有时候会忽略已经提交的事务，DBMS不能阻止这些交换，也不会在交换时得到任何提示。 因此，当DBMSs使用基于mmap的技术时，需要部署复杂的协议来保证透明页交换带来的事务安全问题。 我们将处理更新的方法分三类：OS copy-">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://example.com/images/zedttf.png">
-<meta property="og:image" content="http://example.com/images/zedmono.png">
-<meta property="og:image" content="http://example.com/images/zedshow.png">
-<meta property="article:published_time" content="2022-08-24T05:53:18.000Z">
-<meta property="article:modified_time" content="2022-08-24T07:24:11.139Z">
+<meta property="article:published_time" content="2022-12-16T06:59:45.000Z">
+<meta property="article:modified_time" content="2022-12-17T02:51:46.077Z">
 <meta property="article:author" content="北落师门">
-<meta property="article:tag" content="设计">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://example.com/images/zedttf.png">
 
-<link rel="canonical" href="http://example.com/2022/08/24/setzedfont/">
+<link rel="canonical" href="http://example.com/2022/12/16/mmap/">
 
 
 <script id="page-configurations">
@@ -50,7 +45,7 @@
   };
 </script>
 
-  <title>一款好看的字体Zed Mono | 北落师门</title>
+  <title>mmap | 北落师门</title>
   
 
 
@@ -177,7 +172,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/08/24/setzedfont/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/12/16/mmap/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/powehi.github.io/images/avatar.gif">
@@ -190,7 +185,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          一款好看的字体Zed Mono
+          mmap
         </h1>
 
         <div class="post-meta">
@@ -199,22 +194,19 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2022-08-24 13:53:18 / 修改时间：15:24:11" itemprop="dateCreated datePublished" datetime="2022-08-24T13:53:18+08:00">2022-08-24</time>
+              <time title="创建时间：2022-12-16 14:59:45" itemprop="dateCreated datePublished" datetime="2022-12-16T14:59:45+08:00">2022-12-16</time>
             </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/powehi.github.io/categories/%E5%B7%A5%E5%85%B7%E7%BE%8E%E5%8C%96/" itemprop="url" rel="index"><span itemprop="name">工具美化</span></a>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
                 </span>
-            </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-12-17 10:51:46" itemprop="dateModified" datetime="2022-12-17T10:51:46+08:00">2022-12-17</time>
+              </span>
 
           
-            <span id="/powehi.github.io/2022/08/24/setzedfont/" class="post-meta-item leancloud_visitors" data-flag-title="一款好看的字体Zed Mono" title="阅读次数">
+            <span id="/powehi.github.io/2022/12/16/mmap/" class="post-meta-item leancloud_visitors" data-flag-title="mmap" title="阅读次数">
               <span class="post-meta-item-icon">
                 <i class="fa fa-eye"></i>
               </span>
@@ -229,8 +221,8 @@
       </span>
       <span class="post-meta-item-text">Valine：</span>
     
-    <a title="valine" href="/powehi.github.io/2022/08/24/setzedfont/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/powehi.github.io/2022/08/24/setzedfont/" itemprop="commentCount"></span>
+    <a title="valine" href="/powehi.github.io/2022/12/16/mmap/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/powehi.github.io/2022/12/16/mmap/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -245,43 +237,61 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="前言">前言</h2>
-<p>听说最近Atom团队在Alpha测试一款新的编辑器<a
-target="_blank" rel="noopener" href="https://zed.dev">Zed</a>，使用Rust编写，由GPU来渲染用户界面，支持多人实时协同，目前已经支持包括C/C++、Python、GO、JavaScript、Markdown、Rust等11种语言，而他们的字体Zed-Mono在我看来具有一种更加舒适的设计，在他人分享的图片上看起来感觉比vscode的原生字体更加生动，因此我在这里分享一下我安装这款字体的经历。</p>
-<p>这款字体目前可以在GitHub上找到，项目地址为https://github.com/zed-industries/zed-fonts.git。</p>
-<span id="more"></span>
-<h2 id="安装">安装</h2>
-<table>
-<colgroup>
-<col style="width: 100%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th
-style="text-align: left;">老tip：我已经把build好的ttf文件分享到阿里云盘了，地址：https://www.aliyundrive.com/s/voRPDrZYBgj</th>
-</tr>
-</thead>
-<tbody>
-</tbody>
-</table>
-<p>我们可以先通过<code>git</code>将项目<code>clone</code>到本地：
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">mkdir</span> zedf &amp;&amp; <span class="built_in">cd</span> zedf   <span class="comment">#寻找一个存放项目文件的地方</span></span><br><span class="line">git <span class="built_in">clone</span> https://github.com/zed-industries/zed-fonts.git</span><br><span class="line"><span class="built_in">cd</span> zed-fonts</span><br></pre></td></tr></table></figure></p>
-<p>根据<code>README.md</code>文件中的描述，需要我们运行<code>npm install</code>来安装节点模块，所以需要可以运行<code>npm</code>：
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#在MacOS系统中，可以使用Homebrew包管理工具来安装npm</span></span><br><span class="line">brew search node    <span class="comment">#npm在Node v0.6.x版本后已经内建于Node系统</span></span><br><span class="line"><span class="comment">#在Ubuntu系统中，可以使用apt包管理工具来安装npm</span></span><br><span class="line">apt install nodejs npm</span><br><span class="line"></span><br><span class="line"><span class="comment">#安装完成后，可以通过下面指令查看是否安装成功</span></span><br><span class="line">npm -v</span><br></pre></td></tr></table></figure> 运行结果： <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">14:32@ ~ % npm -v</span><br><span class="line">8.15.0</span><br><span class="line">14:32@ ~ % </span><br></pre></td></tr></table></figure> 之后按照文档中的描述：
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">npm install <span class="comment">#运行结束后会生成一个node_modules文件</span></span><br><span class="line">npm run build -- contents::zed-mono</span><br><span class="line"><span class="comment">#结果会保存在zed-fonts/dist中</span></span><br><span class="line"><span class="comment">#14:35@ dist % ls</span></span><br><span class="line"><span class="comment">#zed-mono</span></span><br><span class="line"><span class="comment">#14:36@ dist % ls zed-mono </span></span><br><span class="line"><span class="comment">#ttf		ttf-unhinted	woff2		zed-mono.css</span></span><br></pre></td></tr></table></figure></p>
-<p>有时候中间会报一些错误，需要结合实际情况进行修正，例如当我在刚开始安装时，报告错误：找不到<code>External dependency &lt;ttfautohint&gt;</code>。于是我在网上找到<code>ttfautohint</code>文件并下载到本地，并在<code>terminal</code>中运行：
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> PATH=<span class="variable">$&#123;PATH&#125;</span>:/ttfautohint的绝对路径</span><br></pre></td></tr></table></figure> 然后重新运行 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm run build -- contents::zed-mono</span><br></pre></td></tr></table></figure>
-期间可能CPU和ARM的占用会比较高，耗时会比较长，这并不是卡住，只需要多等待一些时间就可以了。</p>
-<h2 id="设置">设置</h2>
-<p>之后进入<code>/dist/zed-mono/ttf</code>，这里会包含很多<code>ttf</code>字体文件，将它们全选后打开：</p>
-<p><img src="../../../../images/zedttf.png" /></p>
-<p>选择安装字体，系统字体册中就可以找到<code>Zed Mono</code>字体：</p>
-<p><img src="../../../../images/zedmono.png" /></p>
-<p>之后打开Vs
-Code，进入设置搜索<code>font</code>，在<code>Font Family</code>处修改为<code>Zed Mono</code>后就会自动加载新字体。</p>
-<h2 id="效果">效果</h2>
-<p>实际效果如下：</p>
-<p><img src="../../../../images/zedshow.png" /></p>
+        <h1 id="mmap的问题">MMAP的问题</h1>
+<h2 id="事务安全">事务安全：</h2>
+<p>使用mmap来代替传统的buffer
+pool，会由操作系统来将暂时用不到的block从内存中转移到外存，这个交换时间不由DBMSs来决定，所以有时候会忽略已经提交的事务，DBMS不能阻止这些交换，也不会在交换时得到任何提示。</p>
+<p>因此，当DBMSs使用基于mmap的技术时，需要部署复杂的协议来保证透明页交换带来的事务安全问题。</p>
+<p>我们将处理更新的方法分三类：OS copy-on-write、user space
+copy-on-write、shadow paging</p>
+<h3 id="os-copy-on-write">1. OS copy-on-write</h3>
+<p>创建数据库文件的两个副本，这两个副本初始都指向相同的物理页，第一个作为主副本，第二个作为进行事务更新的私有工作区。（DBMS使用MAP_PRIVATE
+flag来创建主工作区，MongoDB's MMAPv1存储引擎使用这种方法）</p>
+<p>更新时，DBMS在私有工作区中更改页面，操作系统将更改的页面复制到新的物理页，并将虚拟地址重映射到新的物理页，然后应用这次修改。主副本不会意识到这次修改，操作系统也不会保持旧的副本。</p>
+<p>为了提供durability，DBMS就必须预写记录修改的日志，当事务提交的时候，DBMS刷新相关的日志到外存，并用单独的后台线程将修改应用到主副本。</p>
+<p>其中更新页面时需要创新新的副本，这可能会导致两个问题： 1.
+DBMS必须确保最近的一个更新被应用到主副本，才可以执行与其冲突的新事务，这就需要额外的记录空间来跟踪更新的状态
+2.
+私有工作区的数量会随着更新的发生持续增长，最终DBMS可能会有两个完全相同的数据库副本在内存中</p>
+<ul>
+<li>为了解决第二个问题，DBMS可以使用mremap的系统调用定期清理私有工作区，然而，在执行操作前DBMS还必须确保私有工作区中的更新都已经应用到主副本，并且为了避免在mremap期间丢失更新，DBMS还必须在OS完成对工作区的压缩时阻塞挂起的修改。</li>
+</ul>
+<h3 id="user-space-copy-on-write">2. user space copy-on-write</h3>
+<p>不同于OS
+copy-on-write，这种方法需要手动将mmap-backed内存中被修改的页面复制到用户空间中单独维护的缓冲区。（SQLite、MonetDB、RavenDB都是使用这种方法的变体）</p>
+<p>更新时，DBMS将修改应用于副本，并且创建对应修改的日志，DBMS通过将日志提交给外存来提交这些修改，此时可以安全地将修改后的页应用到mmap-backed内存，由于复制整个页是很浪费的，因此一些DBMSs支持直接把预写日志应用到基于mmap的内存。（应该直接在映射的原空间中修改，不需要在修改后修改mmap映射关系）</p>
+<h3 id="shadow-paging">3. shadow paging</h3>
+<p>LMDB是这种方式的主要支持者，这种方式基于System R的shadow
+paging设计。</p>
+<p>使用shadow paging时，DBMS维护数据库单独的primary copy和shadow
+copy，这两者都基于mmap，更新时DBMS首先从primary
+copy中将受影响的页复制到shadow copy中，然后再shadow
+copy上应用更新，提交更新时需要使用msync将shadow
+copy中的修改刷新到外存中，然后将shadow copy作为primary copy，将primary
+copy做为shadow copy。</p>
+<p>尽管这种方法并不复杂，但DBMS必须确保事务之间不会冲突，或者只看到部分更新。例如LMBD通过只允许一个写入来解决这个问题。</p>
+<h2 id="io停止">I/O停止</h2>
+<p>使用传统的buffer
+poll时，为了避免查询时的线程阻塞，可以使用异步I/O，DBMS可以为不连续的页面异步的发出读请求，但是mmap不支持异步读。</p>
+<p>因为操作系统可以透明地（不被察觉的）将页移出内存，此时如果只读查询需要访问被移出的页，则会触发页面阻塞错误，换句话说，由于DBMS不知道是否页面在内存中，因此访问任何页时都可能会导致意外的I/O停止。</p>
+<p>为了解决这个问题，DBMS可以使用系统调用，最显而易见的方案是可以使用mlock来将DBMS预期会在近期再次访问的页面固定在内存中。不幸的是操作系统限制单个进程可以锁定的内存大小，因为如果再内存中固定太多页可能导致操作系统或进程出错。DBMS需要小心地跟踪并且解除对页面的固定，以便操作系统可以将页换出内存。</p>
+<p>另一种潜在的解决方案是使用madvise来为操作系统提供关于查询的预期访问模式的提示。<em>例如</em>，当DBMS需要执行顺序扫描时，可以提供MADV_SEQUENTIAL标记给madvise，相当于告诉操作系统可以在一个页面被读以后换出页面，同时预换入将要访问的与其相邻的页面。这种方法相比mlock消耗更小，控制也更少，只提供可以被操作系统忽略的提示。但是，如果对操作系统提供了错误的提示（例如随机访问时的MADV_SEQUENTIAL）可能会对性能产生严重影响。</p>
+<p>还有一种方法是使用额外的线程来预取页面，当发生页面错误时只会阻塞额外线程，而不是主线程，这些方案虽然可能解决问题，但同时也会引入额外相关的复杂性而违背当初使用mmap的初衷。</p>
+<h2 id="错误处理">错误处理</h2>
+<p>DBMS的核心职责之一是确保数据的完整性，因此错误处理至关重要。例如一些DBMS维护页面级校验和以检验I/O期间的数据损坏。</p>
+<p>当在外存读取页面时，DBMS需要通过存储在头部的校验和来验证页面的内容，而当使用mmap时，DBMS需要在访问每个页面时都验证校验和，因为操作系统可能在某个时间点将页面交换。</p>
+<p>一些DBMSs使用内存不安全语言编写，意味着指针错误可能会破坏内存中的页面，defensively
+coded buffer
+pool可以在这些被破坏的页面写入外存时检查错误，但是mmap会默默将这些被破坏的页存入外存的备份文件中。</p>
+<p>鉴于传统的buffer
+pool允许开发者在单个模块中包含I/O错误处理，在基于mmap的内存交互代码中，也可以通过复杂的信号处理产生一个必须由DBMS处理的SIGBUS。</p>
+<h2 id="性能问题">性能问题</h2>
+<p>关于mmap的透明页交换，最显著的缺点就是对性能的影响。即使上面提到的所有问题都可以通过开发者巧妙地实现来克服，但如果不重新设计操作系统，那么mmap的瓶颈就不可能被克服。</p>
+<p>传统观点认为mmap应该优于传统的文件I/O，因为它避免了两个主要的开销，显式读写系统调用的开销（因为操作系统处理了页面映射与页面错误）、用户空间中额外的缓存空间（直接使用操作系统页面缓存中的指针），mmap还可以降低总内存消耗，因为数据不会拷贝出现在用户空间。</p>
+<p>由于有这些优势，我们可以预期，随着出现更好的有更大带宽的闪存出现，mmap和传统文件I/O之间的性能差距会进一步增大，但出乎意料的，操作系统的页面换出机制，对于在高带宽的外存上大于内存的DBMS工作负载，不能扩展超出几个线程。这些问题被忽视可能因为过去I/O带宽没这么高。</p>
+<p>具体来说，发现了困扰mmap的三个关键瓶颈： 1. 页表竞争 2.
+单线程页面换出 3. TLB故障</p>
+<p>对操作系统的复杂调整可能部分缓解前两个问题，但TLB故障问题明显要复杂得多。当核心需要使远程的TLB中映射无效时，在页面换出期间就会发生TLB故障，虽然对本地TLB的刷新成本低廉，但通过处理器中断同步远程TLB可能需要数千个时钟周期，解决这一问题的方法包括对处理器微架构的修改，或者对操作系统进行额外的修改。</p>
 
     </div>
 
@@ -290,9 +300,6 @@ Code，进入设置搜索<code>font</code>，在<code>Font Family</code>处修�
     
 
       <footer class="post-footer">
-          <div class="post-tags">
-              <a href="/powehi.github.io/tags/%E8%AE%BE%E8%AE%A1/" rel="tag"># 设计</a>
-          </div>
 
         
 
@@ -300,13 +307,10 @@ Code，进入设置搜索<code>font</code>，在<code>Font Family</code>处修�
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/powehi.github.io/2022/08/23/economics2/" rel="prev" title="贸易如何使我们生活变得更好">
-      <i class="fa fa-chevron-left"></i> 贸易如何使我们生活变得更好
+    <a href="/powehi.github.io/2022/09/19/englishissue/" rel="prev" title="220819-英语发表作业">
+      <i class="fa fa-chevron-left"></i> 220819-英语发表作业
     </a></div>
-      <div class="post-nav-item">
-    <a href="/powehi.github.io/2022/09/09/romanoves1/" rel="next" title="INTRODUCTION OF THE ROMANOVS">
-      INTRODUCTION OF THE ROMANOVS <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -371,7 +375,7 @@ Code，进入设置搜索<code>font</code>，在<code>Font Family</code>处修�
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85"><span class="nav-number">2.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%BE%E7%BD%AE"><span class="nav-number">3.</span> <span class="nav-text">设置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%88%E6%9E%9C"><span class="nav-number">4.</span> <span class="nav-text">效果</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#mmap%E7%9A%84%E9%97%AE%E9%A2%98"><span class="nav-number">1.</span> <span class="nav-text">MMAP的问题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8B%E5%8A%A1%E5%AE%89%E5%85%A8"><span class="nav-number">1.1.</span> <span class="nav-text">事务安全：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#os-copy-on-write"><span class="nav-number">1.1.1.</span> <span class="nav-text">1. OS copy-on-write</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#user-space-copy-on-write"><span class="nav-number">1.1.2.</span> <span class="nav-text">2. user space copy-on-write</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#shadow-paging"><span class="nav-number">1.1.3.</span> <span class="nav-text">3. shadow paging</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#io%E5%81%9C%E6%AD%A2"><span class="nav-number">1.2.</span> <span class="nav-text">I&#x2F;O停止</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86"><span class="nav-number">1.3.</span> <span class="nav-text">错误处理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%A7%E8%83%BD%E9%97%AE%E9%A2%98"><span class="nav-number">1.4.</span> <span class="nav-text">性能问题</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
